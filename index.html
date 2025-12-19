@@ -4,60 +4,99 @@
   <meta charset="UTF-8" />
   <title>Anuja Gaikwad | AI & Software Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #0b1120;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: radial-gradient(circle at top, #0f172a, #020617);
       color: #e5e7eb;
-      line-height: 1.6;
+      line-height: 1.7;
     }
+
     header {
-      padding: 80px 20px;
+      padding: 100px 20px;
       text-align: center;
       background: linear-gradient(135deg, #6366f1, #22d3ee);
       color: #020617;
     }
+
     header h1 {
-      font-size: 3rem;
+      font-size: 3.2rem;
       margin-bottom: 10px;
     }
+
     header p {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       font-weight: 600;
     }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 28px;
+      background: #020617;
+      color: #38bdf8;
+      border-radius: 30px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 0 20px rgba(56,189,248,0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 35px rgba(56,189,248,0.9);
+    }
+
     section {
       max-width: 1000px;
       margin: auto;
-      padding: 60px 20px;
+      padding: 80px 20px;
     }
+
     h2 {
       color: #38bdf8;
-      border-bottom: 2px solid #38bdf8;
-      display: inline-block;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      font-size: 2rem;
     }
+
     .card {
-      background: #020617;
-      padding: 25px;
-      border-radius: 12px;
-      margin-top: 25px;
-      box-shadow: 0 0 20px rgba(56,189,248,0.15);
+      background: rgba(2, 6, 23, 0.9);
+      padding: 30px;
+      border-radius: 18px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 30px rgba(56,189,248,0.15);
     }
+
     ul {
       padding-left: 20px;
     }
+
     a {
       color: #22d3ee;
-      text-decoration: none;
       font-weight: 600;
+      text-decoration: none;
     }
+
     footer {
       text-align: center;
-      padding: 30px;
-      background: #020617;
+      padding: 40px;
       color: #94a3b8;
-      margin-top: 40px;
+    }
+
+    /* Scroll animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.9s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -66,98 +105,94 @@
 <header>
   <h1>Anuja Ramesh Gaikwad</h1>
   <p>AI & Software Engineer | Python Developer | Automation Enthusiast</p>
+
+  <!-- Resume Button -->
+  <a class="btn" href="Anuja_Gaikwad_Resume.pdf" download>
+    Download Resume
+  </a>
 </header>
 
-<section>
+<section class="reveal">
   <h2>About Me</h2>
   <div class="card">
-    <p>
-      I am a final-year <strong>B.Tech student in Electronics & Computer Engineering</strong>
-      with hands-on experience in <strong>Artificial Intelligence, automation, and software development</strong>.
-      I enjoy building real-world AI systems such as chatbots, desktop assistants, and automation tools
-      that solve practical problems.
-    </p>
-    <p>
-      My focus is on <strong>clean system design, intelligent decision-making, and practical deployment</strong>.
-    </p>
+    I’m a final-year <strong>B.Tech Electronics & Computer Engineering</strong> student
+    passionate about building real-world AI systems.  
+    I enjoy working on chatbots, automation, and intelligent software
+    that actually solves problems.
   </div>
 </section>
 
-<section>
+<section class="reveal">
   <h2>AI Internship</h2>
   <div class="card">
-    <h3>AI Intern</h3>
-    <p><strong>Duration:</strong> 2025</p>
     <ul>
-      <li>Worked on practical AI applications including chatbots, sentiment analysis, and automation systems</li>
-      <li>Designed and optimized prompts for accurate AI-generated responses</li>
-      <li>Gained exposure to neural networks, expert systems, knowledge representation, and robotics basics</li>
-      <li>Built and documented AI projects for real-world use and portfolio demonstration</li>
+      <li>Built AI-driven chatbots and automation tools</li>
+      <li>Worked with sentiment analysis and prompt engineering</li>
+      <li>Learned neural networks, expert systems & knowledge representation</li>
+      <li>Focused on real-world AI deployment and documentation</li>
     </ul>
   </div>
 </section>
 
-<section>
+<section class="reveal">
   <h2>Projects</h2>
 
   <div class="card">
-    <h3>ReplySense AI – WhatsApp Auto Reply Bot</h3>
+    <strong>ReplySense AI – WhatsApp Auto Reply Bot</strong>
     <ul>
-      <li>Automated WhatsApp message reading and replying using Python</li>
-      <li>Integrated sentiment analysis to classify user mood</li>
-      <li>Implemented hybrid reply logic (rule-based + AI-generated)</li>
-      <li>Added persistent chat memory using SQLite</li>
+      <li>Sentiment-aware replies using Python & TextBlob</li>
+      <li>Hybrid rule-based + AI reply engine</li>
+      <li>Persistent chat memory with SQLite</li>
     </ul>
     <a href="https://github.com/AnujaGaikwad/ReplySense-AI-WhatsApp-Bot" target="_blank">
-      View Project on GitHub →
+      View on GitHub →
     </a>
   </div>
 
   <div class="card">
-    <h3>JARVIS – AI Desktop Assistant</h3>
+    <strong>JARVIS – AI Desktop Assistant</strong>
     <ul>
-      <li>Voice-controlled desktop assistant using Python</li>
-      <li>Wake-word based command execution</li>
-      <li>Integrated Gemini AI for intelligent responses</li>
-      <li>Performed OS-level automation tasks</li>
+      <li>Voice-controlled assistant with Gemini AI</li>
+      <li>Wake-word detection & OS automation</li>
     </ul>
   </div>
 
-  <div class="card">
-    <h3>Weather Web App</h3>
-    <ul>
-      <li>Responsive weather application using HTML, CSS, and JavaScript</li>
-      <li>Displays real-time weather information</li>
-      <li>Clean and user-friendly UI</li>
-    </ul>
-  </div>
 </section>
 
-<section>
+<section class="reveal">
   <h2>Skills</h2>
   <div class="card">
-    <p>
-      <strong>Languages:</strong> Python, HTML, CSS, JavaScript<br>
-      <strong>AI & ML:</strong> Prompt Engineering, Sentiment Analysis, LLM Integration<br>
-      <strong>Tools:</strong> Git, GitHub, Selenium, SQLite, VS Code, PyCharm
-    </p>
+    <strong>Languages:</strong> Python, HTML, CSS, JavaScript<br>
+    <strong>AI:</strong> Prompt Engineering, Sentiment Analysis, LLMs<br>
+    <strong>Tools:</strong> Git, GitHub, Selenium, SQLite, VS Code
   </div>
 </section>
 
-<section>
+<section class="reveal">
   <h2>Contact</h2>
   <div class="card">
-    <p>
-      📧 Email: anujag2020@gmail.com <br>
-      💻 GitHub: <a href="https://github.com/AnujaGaikwad" target="_blank">AnujaGaikwad</a><br>
-      🔗 LinkedIn:https://www.linkedin.com/in/anuja-gaikwad-468599352/
-    </p>
+    GitHub: <a href="https://github.com/AnujaGaikwad">AnujaGaikwad</a><br>
+    LinkedIn: (add link)<br>
+    Email: your-email@example.com
   </div>
 </section>
 
 <footer>
-  © 2025 Anuja Ramesh Gaikwad • AI • Code • Build • Repeat
+  © 2025 Anuja Gaikwad • Built with focus & fire 🔥
 </footer>
+
+<script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  window.addEventListener("scroll", () => {
+    reveals.forEach(section => {
+      const top = section.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        section.classList.add("active");
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
