@@ -1,170 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Anuja Gaikwad | AI & Software Engineer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<title>Anuja Gaikwad | AI & Software Engineer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <style>
-    * { box-sizing: border-box; }
+<style>
+* { box-sizing: border-box; }
 
-    body {
-      margin: 0;
-      font-family: "Segoe UI", system-ui, sans-serif;
-      background: radial-gradient(circle at top, #0f172a, #020617);
-      color: #e5e7eb;
-      line-height: 1.7;
-    }
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: linear-gradient(180deg, #020617, #0f172a);
+  color: #e5e7eb;
+}
 
-    header {
-      padding: 100px 20px;
-      text-align: center;
-      background: linear-gradient(135deg, #6366f1, #22d3ee);
-      color: #020617;
-    }
+header {
+  padding: 90px 20px 60px;
+  text-align: center;
+  background:
+    radial-gradient(circle at top, rgba(56,189,248,0.25), transparent 60%),
+    linear-gradient(135deg, #6366f1, #22d3ee);
+  color: #020617;
+}
 
-    header h1 {
-      font-size: 3.2rem;
-      margin-bottom: 10px;
-    }
+header h1 {
+  font-size: 3.2rem;
+  margin-bottom: 8px;
+}
 
-    header p {
-      font-size: 1.25rem;
-      font-weight: 600;
-    }
+header p {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 14px 28px;
-      background: #020617;
-      color: #38bdf8;
-      border-radius: 30px;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 0 20px rgba(56,189,248,0.6);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+.btn {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 14px 30px;
+  background: #020617;
+  color: #38bdf8;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 0 25px rgba(56,189,248,0.6);
+}
 
-    .btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 35px rgba(56,189,248,0.9);
-    }
+section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+}
 
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 80px 20px;
-    }
+h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #38bdf8;
+}
 
-    h2 {
-      color: #38bdf8;
-      margin-bottom: 30px;
-      font-size: 2rem;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
 
-    .card {
-      background: rgba(2, 6, 23, 0.9);
-      padding: 30px;
-      border-radius: 18px;
-      margin-bottom: 30px;
-      box-shadow: 0 0 30px rgba(56,189,248,0.15);
-    }
+.card {
+  background: rgba(2,6,23,0.9);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(56,189,248,0.15);
+}
 
-    ul {
-      padding-left: 20px;
-    }
+.card h3 {
+  margin-top: 0;
+  color: #e0f2fe;
+}
 
-    a {
-      color: #22d3ee;
-      font-weight: 600;
-      text-decoration: none;
-    }
+.tags span {
+  display: inline-block;
+  margin: 6px 6px 0 0;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(56,189,248,0.15);
+  color: #38bdf8;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
 
-    footer {
-      text-align: center;
-      padding: 40px;
-      color: #94a3b8;
-    }
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
 
-    /* Scroll animation */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.9s ease;
-    }
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #94a3b8;
+}
+</style>
 </head>
 <body>
 
 <header>
   <h1>Anuja Ramesh Gaikwad</h1>
-  <p>AI & Software Engineer | Python Developer | Automation Enthusiast</p>
-
-  <!-- Resume Button -->
-  <a class="btn" href="Anuja_Gaikwad_Resume.pdf" download>
-    Download Resume
-  </a>
+  <p>AI & Software Engineer | Python Developer | Automation</p>
+  <a class="btn" href="./Anuja_Gaikwad_Resume.pdf" target="_blank">Download Resume</a>
 </header>
 
 <section class="reveal">
-  <h2>About Me</h2>
+  <h2>About</h2>
   <div class="card">
-    I’m a final-year <strong>B.Tech Electronics & Computer Engineering</strong> student
-    passionate about building real-world AI systems.  
-    I enjoy working on chatbots, automation, and intelligent software
-    that actually solves problems.
+    Final-year <strong>B.Tech Electronics & Computer Engineering</strong> student with
+    hands-on experience in AI internships, automation, and intelligent systems.
+    I focus on building practical, real-world AI solutions — not just demos.
   </div>
 </section>
 
 <section class="reveal">
   <h2>AI Internship</h2>
-  <div class="card">
-    <ul>
-      <li>Built AI-driven chatbots and automation tools</li>
-      <li>Worked with sentiment analysis and prompt engineering</li>
-      <li>Learned neural networks, expert systems & knowledge representation</li>
-      <li>Focused on real-world AI deployment and documentation</li>
-    </ul>
+  <div class="grid">
+    <div class="card">
+      <h3>AI Intern (2025)</h3>
+      <p>
+        Worked on chatbots, sentiment analysis, prompt engineering, and AI automation.
+        Built deployable AI systems and documented workflows for real-world use.
+      </p>
+      <div class="tags">
+        <span>Chatbots</span><span>Prompt Engineering</span>
+        <span>Sentiment Analysis</span><span>Automation</span>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="reveal">
   <h2>Projects</h2>
+  <div class="grid">
 
-  <div class="card">
-    <strong>ReplySense AI – WhatsApp Auto Reply Bot</strong>
-    <ul>
-      <li>Sentiment-aware replies using Python & TextBlob</li>
-      <li>Hybrid rule-based + AI reply engine</li>
-      <li>Persistent chat memory with SQLite</li>
-    </ul>
-    <a href="https://github.com/AnujaGaikwad/ReplySense-AI-WhatsApp-Bot" target="_blank">
-      View on GitHub →
-    </a>
+    <div class="card">
+      <h3>ReplySense AI</h3>
+      <p>AI-based WhatsApp auto-reply system with sentiment-aware responses.</p>
+      <div class="tags">
+        <span>Python</span><span>TextBlob</span><span>SQLite</span>
+        <span>Automation</span>
+      </div>
+      <br>
+      <a href="https://github.com/AnujaGaikwad/ReplySense-AI-WhatsApp-Bot" target="_blank">View on GitHub →</a>
+    </div>
+
+    <div class="card">
+      <h3>JARVIS AI Assistant</h3>
+      <p>Voice-controlled desktop assistant with Gemini AI integration.</p>
+      <div class="tags">
+        <span>Python</span><span>Speech</span><span>LLM</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Weather Web App</h3>
+      <p>Responsive web app displaying real-time weather data.</p>
+      <div class="tags">
+        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+      </div>
+    </div>
+
   </div>
-
-  <div class="card">
-    <strong>JARVIS – AI Desktop Assistant</strong>
-    <ul>
-      <li>Voice-controlled assistant with Gemini AI</li>
-      <li>Wake-word detection & OS automation</li>
-    </ul>
-  </div>
-
 </section>
 
 <section class="reveal">
   <h2>Skills</h2>
-  <div class="card">
-    <strong>Languages:</strong> Python, HTML, CSS, JavaScript<br>
-    <strong>AI:</strong> Prompt Engineering, Sentiment Analysis, LLMs<br>
-    <strong>Tools:</strong> Git, GitHub, Selenium, SQLite, VS Code
+  <div class="grid">
+    <div class="card">
+      <h3>Programming</h3>
+      <div class="tags">
+        <span>Python</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
+      </div>
+    </div>
+    <div class="card">
+      <h3>AI & Tools</h3>
+      <div class="tags">
+        <span>LLMs</span><span>Prompt Engineering</span>
+        <span>Sentiment Analysis</span><span>Selenium</span>
+        <span>SQLite</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -178,20 +203,18 @@
 </section>
 
 <footer>
-  © 2025 Anuja Gaikwad • Built with focus & fire 🔥
+  © 2025 Anuja Gaikwad • AI • Build • Ship
 </footer>
 
 <script>
-  const reveals = document.querySelectorAll(".reveal");
-
-  window.addEventListener("scroll", () => {
-    reveals.forEach(section => {
-      const top = section.getBoundingClientRect().top;
-      if (top < window.innerHeight - 100) {
-        section.classList.add("active");
-      }
-    });
+const reveals = document.querySelectorAll(".reveal");
+window.addEventListener("scroll", () => {
+  reveals.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 80) {
+      el.classList.add("active");
+    }
   });
+});
 </script>
 
 </body>
