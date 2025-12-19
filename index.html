@@ -1,141 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Anuja Gaikwad | Software Engineer</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <title>Anuja Ramesh Gaikwad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style>
-:root {
-  --bg: #020617;
-  --bg-soft: #0f172a;
-  --card: rgba(2,6,23,0.9);
-  --text: #e5e7eb;
-  --accent: #38bdf8;
-}
+  <style>
+  :root {
+    --bg: #020617;
+    --bg-soft: #0f172a;
+    --card: rgba(2,6,23,0.9);
+    --text: #e5e7eb;
+    --accent: #38bdf8;
+  }
 
-.light {
-  --bg: #f8fafc;
-  --bg-soft: #e5e7eb;
-  --card: #ffffff;
-  --text: #020617;
-  --accent: #2563eb;
-}
+  .light {
+    --bg: #f8fafc;
+    --bg-soft: #e5e7eb;
+    --card: #ffffff;
+    --text: #020617;
+    --accent: #2563eb;
+  }
 
-* { box-sizing: border-box; }
+  * { box-sizing: border-box; }
 
-body {
-  margin: 0;
-  font-family: "Segoe UI", system-ui, sans-serif;
-  background: linear-gradient(180deg, var(--bg), var(--bg-soft));
-  color: var(--text);
-  transition: all 0.3s ease;
-}
+  body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: linear-gradient(180deg, var(--bg), var(--bg-soft));
+    color: var(--text);
+    transition: all 0.3s ease;
+  }
 
-header {
-  padding: 90px 20px 60px;
-  text-align: center;
-  background:
-    radial-gradient(circle at top, rgba(56,189,248,0.25), transparent 60%),
-    linear-gradient(135deg, #6366f1, #22d3ee);
-  color: #020617;
-}
+  header {
+    padding: 90px 20px 60px;
+    text-align: center;
+    background:
+      radial-gradient(circle at top, rgba(56,189,248,0.25), transparent 60%),
+      linear-gradient(135deg, #6366f1, #22d3ee);
+    color: #020617;
+  }
 
-header h1 {
-  font-size: 3rem;
-  margin-bottom: 8px;
-}
+  header h1 {
+    font-size: 3rem;
+    margin-bottom: 6px;
+  }
 
-header p {
-  font-size: 1.15rem;
-  font-weight: 600;
-}
+  header p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0.85;
+    letter-spacing: 0.5px;
+  }
 
-.btn {
-  display: inline-block;
-  margin: 18px 10px 0;
-  padding: 12px 26px;
-  background: #020617;
-  color: #38bdf8;
-  border-radius: 30px;
-  font-weight: 700;
-  text-decoration: none;
-}
+  .btn {
+    display: inline-block;
+    margin: 18px 10px 0;
+    padding: 12px 26px;
+    background: #020617;
+    color: #38bdf8;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+  }
 
-.toggle {
-  margin-top: 20px;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
+  .toggle {
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
 
-section {
-  max-width: 1200px;
-  margin: auto;
-  padding: 60px 20px;
-}
+  section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+  }
 
-h2 {
-  font-size: 1.9rem;
-  margin-bottom: 25px;
-  color: var(--accent);
-}
+  h2 {
+    font-size: 1.9rem;
+    margin-bottom: 25px;
+    color: var(--accent);
+  }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
 
-.card {
-  background: var(--card);
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 0 25px rgba(56,189,248,0.15);
-}
+  .card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(56,189,248,0.15);
+  }
 
-.tags span {
-  display: inline-block;
-  margin: 6px 6px 0 0;
-  padding: 6px 14px;
-  border-radius: 20px;
-  background: rgba(56,189,248,0.15);
-  color: var(--accent);
-  font-size: 0.85rem;
-  font-weight: 600;
-}
+  .tags span {
+    display: inline-block;
+    margin: 6px 6px 0 0;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(56,189,248,0.15);
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
 
-a {
-  color: var(--accent);
-  font-weight: 600;
-  text-decoration: none;
-}
+  a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+  }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+  }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-footer {
-  text-align: center;
-  padding: 40px;
-  color: #94a3b8;
-}
-</style>
+  footer {
+    text-align: center;
+    padding: 40px;
+    color: #94a3b8;
+  }
+  </style>
 </head>
 
 <body>
 
 <header>
   <h1>Anuja Ramesh Gaikwad</h1>
-  <p>Software Engineer | Python Developer</p>
+  <p>Learning. Building. Improving — with Python</p>
 
-  <a class="btn" href="./Anuja_Gaikwad_Resume.pdf" target="_blank">Download Resume</a>
+  <a class="btn" href="./Anuja_Gaikwad_Resume.pdf" target="_blank">
+    Download Resume
+  </a>
 
   <div class="toggle" onclick="toggleTheme()">🌙 / ☀️ Toggle Theme</div>
 </header>
@@ -144,19 +148,14 @@ footer {
   <h2>About</h2>
   <div class="card">
     Final-year <strong>B.Tech Electronics & Computer Engineering</strong> student with a strong
-    foundation in Python and software development.  
-    I focus on building practical projects using automation and AI features,
-    not just theory.
+    foundation in Python. I focus on learning by building practical projects
+    involving automation and AI features.
   </div>
 </section>
 
 <section class="reveal">
   <h2>Python Course (Completed)</h2>
   <div class="card">
-    <p>
-      Completed a comprehensive Python course covering core programming and
-      real-world application development.
-    </p>
     <div class="tags">
       <span>OOP</span><span>File Handling</span><span>SQLite</span>
       <span>Automation</span><span>APIs</span><span>AI Integration</span>
@@ -170,10 +169,6 @@ footer {
 
     <div class="card">
       <h3>ReplySense AI – WhatsApp Auto Reply Bot</h3>
-      <p>
-        Automated WhatsApp replies using Python with sentiment analysis,
-        hybrid rule-based + AI logic, and persistent chat memory.
-      </p>
       <div class="tags">
         <span>Python</span><span>TextBlob</span><span>SQLite</span><span>Automation</span>
       </div>
@@ -185,9 +180,6 @@ footer {
 
     <div class="card">
       <h3>JARVIS – AI Desktop Assistant</h3>
-      <p>
-        Voice-controlled desktop assistant with system automation and AI-based responses.
-      </p>
       <div class="tags">
         <span>Python</span><span>Speech</span><span>AI</span><span>Automation</span>
       </div>
@@ -203,12 +195,9 @@ footer {
 <section class="reveal">
   <h2>Contact</h2>
   <div class="card">
-    📧 Email: <strong>anujag2020@gmail.com</strong><br><br>
-    💻 GitHub: <a href="https://github.com/AnujaGaikwad">AnujaGaikwad</a><br>
-    🔗 LinkedIn:
-    <a href="https://www.linkedin.com/in/anuja-gaikwad-468599352/" target="_blank">
-      anujagaikwad
-    </a>
+    📧 <strong>anujag2020@gmail.com</strong><br><br>
+    💻 <a href="https://github.com/AnujaGaikwad">GitHub</a><br>
+    🔗 <a href="https://www.linkedin.com/in/anuja-gaikwad-468599352/" target="_blank">LinkedIn</a>
   </div>
 </section>
 
