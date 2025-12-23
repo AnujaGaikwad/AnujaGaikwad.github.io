@@ -1,230 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Anuja Ramesh Gaikwad</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <style>
-    :root {
-      --bg: #020617;
-      --bg-soft: #0f172a;
-      --card: rgba(2,6,23,0.9);
-      --text: #e5e7eb;
-      --accent: #38bdf8;
-    }
-
-    .light {
-      --bg: #f8fafc;
-      --bg-soft: #e5e7eb;
-      --card: #ffffff;
-      --text: #020617;
-      --accent: #2563eb;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: "Segoe UI", system-ui, sans-serif;
-      background: linear-gradient(180deg, var(--bg), var(--bg-soft));
-      color: var(--text);
-      transition: all 0.3s ease;
-    }
-
-    header {
-      padding: 90px 20px 60px;
-      text-align: center;
-      background:
-        radial-gradient(circle at top, rgba(56,189,248,0.25), transparent 60%),
-        linear-gradient(135deg, #6366f1, #22d3ee);
-      color: #020617;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 6px;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      font-weight: 500;
-      opacity: 0.85;
-      letter-spacing: 0.5px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin: 18px 10px 0;
-      padding: 12px 26px;
-      background: #020617;
-      color: #38bdf8;
-      border-radius: 30px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .toggle {
-      margin-top: 18px;
-      cursor: pointer;
-      font-size: 0.9rem;
-    }
-
-    section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 60px 20px;
-    }
-
-    h2 {
-      font-size: 1.9rem;
-      margin-bottom: 25px;
-      color: var(--accent);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: var(--card);
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 0 25px rgba(56,189,248,0.15);
-    }
-
-    .tags span {
-      display: inline-block;
-      margin: 6px 6px 0 0;
-      padding: 6px 14px;
-      border-radius: 20px;
-      background: rgba(56,189,248,0.15);
-      color: var(--accent);
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    a {
-      color: var(--accent);
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px;
-      color: #94a3b8;
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <h1>Anuja Ramesh Gaikwad</h1>
-  <p>Learning. Building. Improving — with Python</p>
-
-  <a class="btn" href="./Anuja_Gaikwad_Resume.pdf" target="_blank">
-    Download Resume
-  </a>
-
-  <div class="toggle" onclick="toggleTheme()">🌙 / ☀️ Toggle Theme</div>
-</header>
-
 <section class="reveal">
-  <h2>About</h2>
-  <div class="card">
-    I am a final-year <strong>B.Tech Electronics & Computer Engineering</strong> student
-    with a strong interest in Python and software development.
-    I prefer learning by building real projects and improving them step by step,
-    instead of just following theory.
-  </div>
-</section>
-
-<section class="reveal">
-  <h2>Python Course (Completed)</h2>
-  <div class="card">
-    I completed a comprehensive Python course covering core programming concepts
-    and practical development.
-    The focus was on writing clean logic, understanding how programs work internally,
-    and applying Python to real-world problems.
-    <div class="tags">
-      <span>Core Python</span>
-      <span>OOP</span>
-      <span>File Handling</span>
-      <span>SQLite</span>
-      <span>Automation</span>
-      <span>APIs</span>
-    </div>
-  </div>
-</section>
-
-<section class="reveal">
-  <h2>How I Used Python in Projects</h2>
-  <div class="grid">
-
-    <div class="card">
-      <h3>Core Programming</h3>
-      <p>
-        Used variables, conditions, loops, functions, and object-oriented programming
-        while designing project logic and reusable components.
-      </p>
-      <div class="tags">
-        <span>OOP</span><span>Functions</span><span>Modules</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Automation & Workflows</h3>
-      <p>
-        Built automation flows to read messages, trigger responses,
-        and manage background tasks using Python scripts.
-      </p>
-      <div class="tags">
-        <span>Automation</span><span>Selenium</span><span>Scripts</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>AI Features</h3>
-      <p>
-        Integrated sentiment analysis and AI-generated responses
-        to make applications behave more intelligently.
-      </p>
-      <div class="tags">
-        <span>TextBlob</span><span>AI Logic</span><span>APIs</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Data Storage</h3>
-      <p>
-        Used SQLite databases to store chat history and maintain
-        persistent memory across sessions.
-      </p>
-      <div class="tags">
-        <span>SQLite</span><span>Persistence</span><span>Data</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="reveal">
- <section class="reveal">
   <h2>Projects</h2>
   <div class="grid">
 
@@ -235,13 +9,11 @@
         An AI-based WhatsApp auto-reply system built using Python.
         The system reads incoming messages, preprocesses text,
         detects sentiment using a hybrid approach (TextBlob + keyword rules),
-        selects an appropriate reply style, and stores chat history
-        using SQLite for persistent memory.
+        and selects an appropriate reply style automatically.
       </p>
       <div class="tags">
         <span>Python</span>
         <span>TextBlob</span>
-        <span>SQLite</span>
         <span>AI Logic</span>
         <span>NLP</span>
       </div>
@@ -251,27 +23,26 @@
       </a>
     </div>
 
-<!-- PyAutoGUI Bot -->
-<div class="card">
-  <h3>PyAutoGUI WhatsApp Automation Bot</h3>
-  <p>
-    A desktop automation project that controls WhatsApp Web using
-    mouse and keyboard automation. The bot copies chat history,
-    extracts the last incoming message, decides whether to reply,
-    and sends responses automatically without using any official APIs.
-  </p>
-  <div class="tags">
-    <span>Python</span>
-    <span>PyAutoGUI</span>
-    <span>Automation</span>
-    <span>System Scripts</span>
-  </div>
-  <br>
-  <a href="https://github.com/AnujaGaikwad/AUTO-REPLY-AI-CHATBOT-WhatsApp-Automation-" target="_blank">
-    View on GitHub →
-  </a>
-</div>
-
+    <!-- PyAutoGUI Bot -->
+    <div class="card">
+      <h3>PyAutoGUI WhatsApp Automation Bot</h3>
+      <p>
+        A desktop automation project that controls WhatsApp Web using
+        mouse and keyboard automation. The bot copies chat history,
+        extracts the last incoming message, decides whether to reply,
+        and sends responses automatically without using any official APIs.
+      </p>
+      <div class="tags">
+        <span>Python</span>
+        <span>PyAutoGUI</span>
+        <span>Automation</span>
+        <span>System Scripts</span>
+      </div>
+      <br>
+      <a href="https://github.com/AnujaGaikwad/AUTO-REPLY-AI-CHATBOT-WhatsApp-Automation-" target="_blank">
+        View on GitHub →
+      </a>
+    </div>
 
     <!-- JARVIS -->
     <div class="card">
@@ -295,30 +66,29 @@
     </div>
 
     <!-- Weather Web App -->
-<div class="card">
-  <h3>Weather Web Application</h3>
-  <p>
-    A responsive web application that displays real-time weather
-    information using a public weather API. Users can search by location,
-    and the application dynamically updates temperature, humidity,
-    and weather conditions.
-  </p>
-  <div class="tags">
-    <span>HTML</span>
-    <span>CSS</span>
-    <span>JavaScript</span>
-    <span>API</span>
-  </div>
-</div>
+    <div class="card">
+      <h3>Weather Web Application</h3>
+      <p>
+        A responsive web application that displays real-time weather
+        information using a public weather API. Users can search by location,
+        and the application dynamically updates temperature, humidity,
+        and weather conditions.
+      </p>
+      <div class="tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>API</span>
+      </div>
+    </div>
 
-    <!-- Music Mobile App -->
+    <!-- Music App -->
     <div class="card">
       <h3>Music Player – Mobile Application</h3>
       <p>
         A mobile-based music player application developed to play
         local audio files with standard playback controls.
-        The project focuses on mobile UI design, app lifecycle,
-        and smooth media playback.
+        The project focuses on mobile UI design and smooth media playback.
       </p>
       <div class="tags">
         <span>Mobile App</span>
@@ -330,37 +100,3 @@
 
   </div>
 </section>
-
-
-<section class="reveal">
-  <h2>Contact</h2>
-  <div class="card">
-    📧 <strong>anujag2020@gmail.com</strong><br><br>
-    💻 <a href="https://github.com/AnujaGaikwad">GitHub</a><br>
-    🔗 <a href="https://www.linkedin.com/in/anuja-gaikwad-468599352/" target="_blank">
-      LinkedIn
-    </a>
-  </div>
-</section>
-
-<footer>
-  © 2025 Anuja Ramesh Gaikwad • Learning by building
-</footer>
-
-<script>
-  const reveals = document.querySelectorAll(".reveal");
-  window.addEventListener("scroll", () => {
-    reveals.forEach(el => {
-      if (el.getBoundingClientRect().top < window.innerHeight - 80) {
-        el.classList.add("active");
-      }
-    });
-  });
-
-  function toggleTheme() {
-    document.body.classList.toggle("light");
-  }
-</script>
-
-</body>
-</html>
