@@ -12,6 +12,13 @@
       --card: rgba(2,6,23,0.9);
       --text: #e5e7eb;
       --accent: #38bdf8;
+      --border-gradient: linear-gradient(
+        120deg,
+        #38bdf8,
+        #6366f1,
+        #22d3ee,
+        #38bdf8
+      );
     }
 
     .light {
@@ -22,14 +29,15 @@
       --accent: #2563eb;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
       font-family: "Segoe UI", system-ui, sans-serif;
       background: linear-gradient(180deg, var(--bg), var(--bg-soft));
       color: var(--text);
-      transition: background 0.3s ease, color 0.3s ease;
     }
 
     header {
@@ -43,71 +51,109 @@
 
     header h1 {
       font-size: 3rem;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     header p {
-      font-size: 1.1rem;
-      font-weight: 500;
-      opacity: 0.85;
-      letter-spacing: 0.5px;
+      font-size: 1.15rem;
+      opacity: 0.9;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 18px;
-      padding: 12px 26px;
+      margin-top: 22px;
+      padding: 12px 28px;
       background: #020617;
       color: #38bdf8;
       border-radius: 30px;
       font-weight: 700;
       text-decoration: none;
-    }
-
-    /* Modern theme toggle */
-    .theme-toggle {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      border: none;
-      background: var(--card);
-      color: var(--accent);
-      font-size: 18px;
-      cursor: pointer;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       transition: transform 0.2s ease;
     }
 
-    .theme-toggle:hover {
-      transform: scale(1.08);
+    .btn:hover {
+      transform: translateY(-2px);
     }
 
     section {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: auto;
       padding: 60px 20px;
     }
 
     h2 {
-      font-size: 1.9rem;
-      margin-bottom: 25px;
+      font-size: 2rem;
+      margin-bottom: 26px;
       color: var(--accent);
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
     }
 
+    /* ===== Gradient Animated Border Card ===== */
     .card {
+      position: relative;
+      padding: 26px;
+      border-radius: 18px;
       background: var(--card);
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 0 25px rgba(56,189,248,0.15);
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      padding: 2px;
+      background: var(--border-gradient);
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      animation: borderMove 3s linear infinite;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    @keyframes borderMove {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+
+    /* ===== Animated AI Icons ===== */
+    .skill-icon {
+      font-size: 2.3rem;
+      margin-bottom: 10px;
+      display: inline-block;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .delay-1 { animation-delay: 0s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.8s; }
+    .delay-4 { animation-delay: 1.2s; }
+
+    @keyframes float {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-8px); }
+      100% { transform: translateY(0); }
+    }
+
+    .card:hover .skill-icon {
+      text-shadow: 0 0 14px rgba(56,189,248,0.9);
+      transform: scale(1.12);
     }
 
     .tags span {
@@ -123,8 +169,8 @@
 
     a {
       color: var(--accent);
-      font-weight: 600;
       text-decoration: none;
+      font-weight: 600;
     }
 
     .reveal {
@@ -142,6 +188,22 @@
       text-align: center;
       padding: 40px;
       color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: none;
+      background: var(--card);
+      color: var(--accent);
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
   </style>
 </head>
@@ -150,7 +212,7 @@
 
 <header>
   <h1>Anuja Ramesh Gaikwad</h1>
-  <p>Learning. Building. Improving — with Python</p>
+  <p>Building practical AI systems with Python</p>
 
   <a class="btn" href="./Anuja_Gaikwad_Resume.pdf" target="_blank">
     Download Resume
@@ -158,82 +220,65 @@
 </header>
 
 <section class="reveal">
-  <h2>About</h2>
+  <h2>About Me</h2>
   <div class="card">
     Final-year <strong>B.Tech Electronics & Computer Engineering</strong> student
-    with strong interest in Python, automation, and AI-based systems.
-    I focus on building real-world projects and improving them step by step.
+    with hands-on experience in <strong>Python, Automation, and Generative AI</strong>.
+    I focus on building intelligent systems and improving them through real-world use.
   </div>
 </section>
 
 <section class="reveal">
-  <h2>Projects</h2>
+  <h2>Skills</h2>
+
   <div class="grid">
 
     <div class="card">
-      <h3>WhatsApp Auto-Reply Bot</h3>
-      <p>
-        Desktop automation bot that controls WhatsApp Web using
-        mouse and keyboard automation to send replies automatically,
-        without using any official APIs.
-      </p>
+      <div class="skill-icon delay-1">🤖</div>
+      <h3>AI & Automation</h3>
       <div class="tags">
-        <span>Python</span>
-        <span>PyAutoGUI</span>
-        <span>Automation</span>
+        <span>Generative AI</span>
+        <span>Gemini API</span>
+        <span>Prompt Engineering</span>
+        <span>Automation Logic</span>
       </div>
-      <br>
-      <a href="https://github.com/AnujaGaikwad/AUTO-REPLY-AI-CHATBOT-WhatsApp-Automation-" target="_blank">
-        View on GitHub →
-      </a>
     </div>
 
     <div class="card">
-      <h3>JARVIS – Desktop Assistant</h3>
-      <p>
-        Voice-controlled desktop assistant that listens to user commands
-        and performs intelligent system-level actions such as opening
-        applications and browsing the web.
-      </p>
+      <div class="skill-icon delay-2">🐍</div>
+      <h3>Programming</h3>
       <div class="tags">
         <span>Python</span>
-        <span>AI</span>
-        <span>Automation</span>
+        <span>JavaScript (Basic)</span>
+        <span>Problem Solving</span>
       </div>
-      <br>
-      <a href="https://github.com/AnujaGaikwad/Jarvis-Assistant-" target="_blank">
-        View on GitHub →
-      </a>
     </div>
 
     <div class="card">
-      <h3>Weather Web Application</h3>
-      <p>
-        Responsive web application that displays real-time weather
-        information using a public API with dynamic updates.
-      </p>
+      <div class="skill-icon delay-3">🛠</div>
+      <h3>Tools & Platforms</h3>
       <div class="tags">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>API</span>
+        <span>Git & GitHub</span>
+        <span>PyCharm</span>
+        <span>VS Code</span>
       </div>
     </div>
 
-  </div>
-</section>
+    <div class="card">
+      <div class="skill-icon delay-4">🌐</div>
+      <h3>Web Basics</h3>
+      <div class="tags">
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>Responsive Design</span>
+      </div>
+    </div>
 
-<section class="reveal">
-  <h2>Contact</h2>
-  <div class="card">
-    📧 <strong>anujag2020@gmail.com</strong><br><br>
-    💻 <a href="https://github.com/AnujaGaikwad" target="_blank">GitHub</a><br>
-    🔗 <a href="https://www.linkedin.com/in/anuja-gaikwad-468599352/" target="_blank">LinkedIn</a>
   </div>
 </section>
 
 <footer>
-  © 2025 Anuja Ramesh Gaikwad • Learning by building
+  © 2025 Anuja Ramesh Gaikwad • Built with focus & consistency
 </footer>
 
 <button class="theme-toggle" onclick="toggleTheme()">◐</button>
