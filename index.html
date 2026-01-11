@@ -7,24 +7,18 @@
 
 <style>
 :root{
-  --bg:#020617;
-  --bg-soft:#0f172a;
-  --card:rgba(2,6,23,.92);
-  --text:#e5e7eb;
-  --accent:#38bdf8;
-  --chip-bg:rgba(56,189,248,.15);
-  --grad:linear-gradient(120deg,#38bdf8,#6366f1,#22d3ee,#38bdf8);
-}
-.light{
-  --bg:#f8fafc;
-  --bg-soft:#e5e7eb;
-  --card:#ffffff;
-  --text:#020617;
-  --accent:#2563eb;
-  --chip-bg:rgba(37,99,235,.15);
+  --bg:#0D1B2A;
+  --bg-soft:#1B263B;
+  --card:#1B263B;
+  --text:#E0E1DD;
+  --accent:#778DA9;
+  --muted:#415A77;
+  --chip-bg:rgba(119,141,169,.18);
+  --grad:linear-gradient(120deg,#415A77,#778DA9,#415A77);
 }
 
 *{box-sizing:border-box}
+
 body{
   margin:0;
   font-family:"Segoe UI",system-ui,sans-serif;
@@ -34,37 +28,58 @@ body{
 
 /* HEADER */
 header{
-  padding:90px 20px 60px;
+  padding:90px 20px 70px;
   text-align:center;
   background:
-    radial-gradient(circle at top,rgba(56,189,248,.25),transparent 60%),
-    linear-gradient(135deg,#6366f1,#22d3ee);
-  color:#020617;
+    radial-gradient(circle at top,rgba(119,141,169,.25),transparent 60%),
+    linear-gradient(135deg,#0D1B2A,#1B263B);
 }
-header h1{font-size:3rem;margin-bottom:6px}
-header p{font-size:1.15rem;opacity:.9}
+header h1{
+  font-size:3rem;
+  margin-bottom:8px;
+  color:#E0E1DD;
+}
+header p{
+  font-size:1.15rem;
+  opacity:.9;
+  color:#E0E1DD;
+}
 
 .btn{
   display:inline-block;
-  margin-top:20px;
-  padding:12px 28px;
+  margin-top:22px;
+  padding:12px 30px;
   border-radius:30px;
-  background:#020617;
-  color:#38bdf8;
+  background:#E0E1DD;
+  color:#0D1B2A;
   font-weight:700;
   text-decoration:none;
 }
 
 /* LAYOUT */
-section{max-width:1100px;margin:auto;padding:60px 20px}
-h2{font-size:2rem;color:var(--accent);margin-bottom:25px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:70px 20px;
+}
+h2{
+  font-size:2rem;
+  color:#E0E1DD;
+  margin-bottom:30px;
+}
 
-/* CARD + GRADIENT BORDER */
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+/* CARD */
 .card{
   position:relative;
   background:var(--card);
-  padding:26px;
+  padding:28px;
   border-radius:18px;
   overflow:hidden;
 }
@@ -81,19 +96,13 @@ h2{font-size:2rem;color:var(--accent);margin-bottom:25px}
   -webkit-mask-composite:xor;
   mask-composite:exclude;
   opacity:0;
-  animation:borderMove 3s linear infinite;
   transition:.4s;
 }
 .card:hover::before{opacity:1}
 
-@keyframes borderMove{
-  0%{filter:hue-rotate(0deg)}
-  100%{filter:hue-rotate(360deg)}
-}
-
-/* SKILL ICONS */
+/* SKILLS */
 .skill-icon{
-  font-size:2.3rem;
+  font-size:2.2rem;
   margin-bottom:10px;
   animation:float 3s ease-in-out infinite;
 }
@@ -114,21 +123,21 @@ h2{font-size:2rem;color:var(--accent);margin-bottom:25px}
   margin:6px 6px 0 0;
   padding:6px 14px;
   border-radius:20px;
-  background:rgba(56,189,248,.15);
-  color:var(--accent);
+  background:rgba(119,141,169,.2);
+  color:#E0E1DD;
   font-size:.85rem;
   font-weight:600;
 }
 
 /* CHIPS */
-.chip-wrap{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
+.chip-wrap{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
 .chip{
   padding:8px 16px;
   border-radius:999px;
   background:var(--chip-bg);
-  color:var(--accent);
+  color:#E0E1DD;
   font-weight:600;
-  animation:pulse 2.8s ease-in-out infinite;
+  animation:pulse 2.6s ease-in-out infinite;
 }
 .chip:nth-child(2){animation-delay:.4s}
 .chip:nth-child(3){animation-delay:.8s}
@@ -137,34 +146,46 @@ h2{font-size:2rem;color:var(--accent);margin-bottom:25px}
 
 @keyframes pulse{
   0%{transform:scale(1);box-shadow:none}
-  50%{transform:scale(1.05);box-shadow:0 0 18px rgba(56,189,248,.45)}
+  50%{transform:scale(1.05);box-shadow:0 0 18px rgba(119,141,169,.45)}
   100%{transform:scale(1);box-shadow:none}
 }
+
+/* PROJECT LINK */
+.project-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:16px;
+  font-weight:600;
+  color:#E0E1DD;
+  position:relative;
+  text-decoration:none;
+}
+.project-link::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  width:0;
+  height:2px;
+  background:#E0E1DD;
+  transition:.3s;
+}
+.project-link:hover::after{width:100%}
 
 /* LIST */
 ul{padding-left:18px}
 li{margin-bottom:6px}
 
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(40px);transition:.8s}
-.reveal.active{opacity:1;transform:translateY(0)}
-
 /* FOOTER */
-footer{text-align:center;padding:40px;color:#94a3b8}
-
-/* TOGGLE */
-.theme-toggle{
-  position:fixed;
-  bottom:28px;
-  right:28px;
-  width:48px;height:48px;
-  border-radius:50%;
-  border:none;
-  background:var(--card);
-  color:var(--accent);
-  cursor:pointer;
+footer{
+  text-align:center;
+  padding:50px;
+  color:#778DA9;
 }
-a{color:var(--accent);text-decoration:none}
+
+/* REVEAL */
+.reveal{opacity:1} 
 </style>
 </head>
 
@@ -172,14 +193,15 @@ a{color:var(--accent);text-decoration:none}
 
 <header>
   <h1>Anuja Ramesh Gaikwad</h1>
-  <p>Building practical AI systems with Python</p>
+  <p>Exploring AI & ML through practical, real-world systems</p>
   <a class="btn" href="./Anuja_Gaikwad_Resume.pdf" target="_blank">Download Resume</a>
 </header>
 
-<section class="reveal">
+<section>
 <h2>About Me</h2>
 <div class="card">
-Final-year <strong>B.Tech Electronics & Computer Engineering</strong> student with hands-on experience in <strong>Python, Automation, and Generative AI</strong>.
+Final-year <strong>B.Tech Electronics & Computer Engineering</strong> student with hands-on experience in <strong>Python, Automation, and Generative AI</strong>.  
+I enjoy building intelligent systems, learning by doing, and continuously improving through experimentation.
 <br><br>
 <strong>Currently Learning</strong>
 <div class="chip-wrap">
@@ -192,85 +214,71 @@ Final-year <strong>B.Tech Electronics & Computer Engineering</strong> student wi
 </div>
 </section>
 
-<section class="reveal">
+<section>
 <h2>Skills</h2>
 <div class="grid">
-  <div class="card"><div class="skill-icon delay-1">🤖</div><h3>AI & Automation</h3><div class="tags"><span>Generative AI</span><span>Gemini API</span><span>Automation</span></div></div>
-  <div class="card"><div class="skill-icon delay-2">🐍</div><h3>Programming</h3><div class="tags"><span>Python</span><span>JavaScript (Basic)</span></div></div>
-  <div class="card"><div class="skill-icon delay-3">🛠</div><h3>Tools</h3><div class="tags"><span>Git</span><span>GitHub</span><span>VS Code</span></div></div>
+  <div class="card"><div class="skill-icon delay-1">🤖</div><h3>AI & Automation</h3><div class="tags"><span>Generative AI</span><span>Gemini API</span></div></div>
+  <div class="card"><div class="skill-icon delay-2">🐍</div><h3>Programming</h3><div class="tags"><span>Python</span><span>JavaScript</span></div></div>
+  <div class="card"><div class="skill-icon delay-3">🛠</div><h3>Tools</h3><div class="tags"><span>Git</span><span>GitHub</span></div></div>
   <div class="card"><div class="skill-icon delay-4">🌐</div><h3>Web</h3><div class="tags"><span>HTML</span><span>CSS</span></div></div>
 </div>
 </section>
 
-<section class="reveal">
+<section>
 <h2>Projects</h2>
 <div class="grid">
 
 <div class="card">
 <h3>WhatsApp Auto-Reply Bot</h3>
-<p>AI-powered WhatsApp automation using Python and Gemini API.</p>
 <ul>
-<li>Sentiment-aware AI replies</li>
-<li>Rule-based + generative responses</li>
-<li>Screen automation (no official API)</li>
+<li>AI-based message replies</li>
+<li>Screen automation</li>
+<li>Sentiment-aware logic</li>
 </ul>
-<div class="tags"><span>Python</span><span>AI</span><span>Automation</span></div>
-<a href="https://github.com/AnujaGaikwad/AUTO-REPLY-AI-CHATBOT-WhatsApp-Automation-" target="_blank">🔗 GitHub Repo</a>
+<a class="project-link" href="https://github.com/AnujaGaikwad/AUTO-REPLY-AI-CHATBOT-WhatsApp-Automation-" target="_blank">
+Open Repo ↗
+</a>
 </div>
 
 <div class="card">
 <h3>JARVIS – AI Desktop Assistant</h3>
-<p>Voice-controlled assistant for system automation.</p>
 <ul>
 <li>Voice command execution</li>
-<li>App & web control</li>
+<li>System automation</li>
 <li>Fallback-safe logic</li>
 </ul>
-<div class="tags"><span>Python</span><span>AI</span><span>Voice</span></div>
-<a href="https://github.com/AnujaGaikwad/Jarvis-Assistant-" target="_blank">🔗 GitHub Repo</a>
+<a class="project-link" href="https://github.com/AnujaGaikwad/Jarvis-Assistant-" target="_blank">
+Open Repo ↗
+</a>
 </div>
 
 <div class="card">
 <h3>AI Learning Series</h3>
-<p>Hands-on AI learning repository documenting daily experiments and mini projects.</p>
 <ul>
-<li>Python-based AI practice</li>
-<li>Mini projects & experiments</li>
-<li>Structured learning workflow</li>
+<li>Daily AI experiments</li>
+<li>Mini Python projects</li>
+<li>Structured learning</li>
 </ul>
-<div class="tags"><span>Python</span><span>AI</span><span>Learning</span></div>
-<a href="https://github.com/AnujaGaikwad/ai-learning-series" target="_blank">🔗 GitHub Repo</a>
+<a class="project-link" href="https://github.com/AnujaGaikwad/ai-learning-series" target="_blank">
+Open Repo ↗
+</a>
 </div>
 
 </div>
 </section>
 
-<section class="reveal">
-<h2>Education</h2>
-<div class="grid">
-<div class="card"><h3>B.Tech (ECE)</h3><p>MBES College of Engineering<br>2023–2026</p></div>
-<div class="card"><h3>Diploma</h3><p>Government Polytechnic, Beed<br>2020–2023</p></div>
-</div>
-</section>
-
-<section class="reveal">
+<section>
 <h2>Contact</h2>
 <div class="card">
-📧 <strong>Email:</strong> anujag2020@gmail.com<br><br>
-💻 <strong>GitHub:</strong> <a href="https://github.com/AnujaGaikwad" target="_blank">github.com/AnujaGaikwad</a><br><br>
-🔗 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/anuja-gaikwad-468599352/" target="_blank">linkedin.com/in/anuja-gaikwad</a>
+📧 anujag2020@gmail.com<br><br>
+💻 <a href="https://github.com/AnujaGaikwad" target="_blank">GitHub</a><br><br>
+🔗 <a href="https://www.linkedin.com/in/anuja-gaikwad-468599352/" target="_blank">LinkedIn</a>
 </div>
 </section>
 
-<footer>© 2025 Anuja Ramesh Gaikwad • Built with consistency</footer>
-
-<button class="theme-toggle" onclick="toggleTheme()">◐</button>
-
-<script>
-const reveals=document.querySelectorAll(".reveal");
-window.addEventListener("scroll",()=>{reveals.forEach(e=>{if(e.getBoundingClientRect().top<innerHeight-80)e.classList.add("active")})});
-function toggleTheme(){document.body.classList.toggle("light")}
-</script>
+<footer>
+© 2025 Anuja Ramesh Gaikwad • Deep Sea Edition
+</footer>
 
 </body>
 </html>
