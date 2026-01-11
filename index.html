@@ -26,7 +26,7 @@ body{
   overflow-x:hidden;
 }
 
-/* ================== SCROLL PROGRESS ================== */
+/* ===== Scroll Progress ===== */
 #progress{
   position:fixed;
   top:0;
@@ -37,7 +37,7 @@ body{
   z-index:9999;
 }
 
-/* ================== STICKY NAV ================== */
+/* ===== Sticky Nav ===== */
 nav{
   position:sticky;
   top:0;
@@ -46,7 +46,6 @@ nav{
   backdrop-filter:blur(10px);
   border-bottom:1px solid rgba(224,225,221,.08);
 }
-
 .nav-inner{
   max-width:1100px;
   margin:auto;
@@ -55,7 +54,6 @@ nav{
   justify-content:center;
   gap:26px;
 }
-
 .nav-inner a{
   color:var(--accent);
   text-decoration:none;
@@ -63,7 +61,6 @@ nav{
   font-size:.95rem;
   position:relative;
 }
-
 .nav-inner a::after{
   content:"";
   position:absolute;
@@ -74,12 +71,9 @@ nav{
   background:var(--text);
   transition:.3s;
 }
+.nav-inner a:hover::after{width:100%}
 
-.nav-inner a:hover::after{
-  width:100%;
-}
-
-/* ================== PARALLAX WAVES ================== */
+/* ===== Parallax Waves ===== */
 .waves{
   position:fixed;
   bottom:0;
@@ -89,34 +83,24 @@ nav{
   z-index:-1;
   pointer-events:none;
 }
-
 .wave{
   position:absolute;
   bottom:0;
   width:200%;
   height:260px;
 }
+.wave svg{width:100%;height:100%}
+.wave.back path{fill:#1B263B;opacity:.35}
+.wave.mid path{fill:#415A77;opacity:.45}
+.wave.front path{fill:#778DA9;opacity:.55}
 
-.wave svg{
-  width:100%;
-  height:100%;
-}
-
-.wave.back path{ fill:#1B263B; opacity:.35; }
-.wave.mid  path{ fill:#415A77; opacity:.45; }
-.wave.front path{ fill:#778DA9; opacity:.55; }
-
-/* ================== HEADER ================== */
+/* ===== Header ===== */
 header{
   padding:90px 20px 80px;
   text-align:center;
 }
-header h1{
-  font-size:3rem;
-  margin-bottom:10px;
-}
+header h1{font-size:3rem;margin-bottom:10px}
 header p{opacity:.9}
-
 .btn{
   display:inline-block;
   margin-top:22px;
@@ -128,33 +112,60 @@ header p{opacity:.9}
   text-decoration:none;
 }
 
-/* ================== SECTIONS ================== */
+/* ===== Sections ===== */
 section{
   max-width:1100px;
   margin:auto;
   padding:80px 20px;
 }
-
 h2{
   font-size:2rem;
-  margin-bottom:30px;
+  margin-bottom:28px;
 }
 
-/* ================== GRID ================== */
+/* ===== Grid ===== */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:30px;
 }
 
-/* ================== CARD ================== */
+/* ===== Card ===== */
 .card{
   background:var(--card);
   padding:28px;
   border-radius:18px;
 }
 
-/* ================== PROJECT LINK ================== */
+/* ===== Learning Chips ===== */
+.chip-wrap{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:18px;
+}
+.chip{
+  padding:8px 16px;
+  border-radius:999px;
+  background:rgba(119,141,169,.18);
+  color:var(--text);
+  font-weight:600;
+  font-size:.9rem;
+  box-shadow:0 0 0 rgba(119,141,169,0);
+  animation:pulse 3s ease-in-out infinite;
+}
+.chip:nth-child(2){animation-delay:.4s}
+.chip:nth-child(3){animation-delay:.8s}
+.chip:nth-child(4){animation-delay:1.2s}
+.chip:nth-child(5){animation-delay:1.6s}
+
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.05);box-shadow:0 0 18px rgba(119,141,169,.35)}
+  100%{transform:scale(1)}
+}
+
+/* ===== Project Link ===== */
 .project-link{
   display:inline-block;
   margin-top:16px;
@@ -163,7 +174,6 @@ h2{
   text-decoration:none;
   position:relative;
 }
-
 .project-link::after{
   content:"";
   position:absolute;
@@ -174,16 +184,19 @@ h2{
   background:var(--text);
   transition:.3s;
 }
+.project-link:hover::after{width:100%}
 
-.project-link:hover::after{
-  width:100%;
-}
-
-/* ================== FOOTER ================== */
+/* ===== Footer ===== */
 footer{
   text-align:center;
-  padding:50px;
+  padding:60px 20px;
   color:var(--accent);
+}
+.footer-quote{
+  margin-top:10px;
+  font-size:.9rem;
+  opacity:.8;
+  letter-spacing:.5px;
 }
 </style>
 </head>
@@ -192,7 +205,6 @@ footer{
 
 <div id="progress"></div>
 
-<!-- STICKY NAV -->
 <nav>
   <div class="nav-inner">
     <a href="#about">About</a>
@@ -201,7 +213,7 @@ footer{
   </div>
 </nav>
 
-<!-- PARALLAX WAVES -->
+<!-- Waves -->
 <div class="waves">
   <div class="wave back">
     <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
@@ -230,9 +242,17 @@ footer{
 <h2>About Me</h2>
 <div class="card">
 Final-year <strong>B.Tech Electronics & Computer Engineering</strong> student focused on
-<strong>Python, AI, and Automation</strong>.<br><br>
-Currently learning Artificial Intelligence, Machine Learning,
-Generative AI, and practical model integration through hands-on projects.
+<strong>Python, AI, and Automation</strong>. I learn best by building, testing,
+and refining real systems.
+<br><br>
+<strong>Currently Learning</strong>
+<div class="chip-wrap">
+  <div class="chip">Artificial Intelligence</div>
+  <div class="chip">Machine Learning</div>
+  <div class="chip">Generative AI</div>
+  <div class="chip">Model Integration</div>
+  <div class="chip">Prompt Engineering</div>
+</div>
 </div>
 </section>
 
@@ -289,11 +309,12 @@ target="_blank">Open Repo ↗</a>
 </section>
 
 <footer>
-© 2026 Anuja Ramesh Gaikwad • Deep Sea Edition
+© 2026 Anuja Ramesh Gaikwad  
+<div class="footer-quote">calm depth, quiet strength.</div>
 </footer>
 
 <script>
-/* SCROLL PROGRESS + WAVE PARALLAX */
+/* Scroll progress + wave parallax */
 window.addEventListener("scroll",()=>{
   const doc=document.documentElement;
   const sc=(doc.scrollTop/(doc.scrollHeight-doc.clientHeight))*100;
