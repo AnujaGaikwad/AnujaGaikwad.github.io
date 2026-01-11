@@ -29,10 +29,8 @@ body{
 /* ===== Scroll Progress ===== */
 #progress{
   position:fixed;
-  top:0;
-  left:0;
-  height:3px;
-  width:0%;
+  top:0;left:0;
+  height:3px;width:0%;
   background:#E0E1DD;
   z-index:9999;
 }
@@ -44,7 +42,6 @@ nav{
   z-index:9998;
   background:rgba(13,27,42,.85);
   backdrop-filter:blur(10px);
-  border-bottom:1px solid rgba(224,225,221,.08);
 }
 .nav-inner{
   max-width:1100px;
@@ -59,37 +56,20 @@ nav{
   text-decoration:none;
   font-weight:600;
   font-size:.95rem;
-  position:relative;
 }
-.nav-inner a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-6px;
-  height:2px;
-  width:0;
-  background:var(--text);
-  transition:.3s;
-}
-.nav-inner a:hover::after{width:100%}
 
-/* ===== Parallax Waves ===== */
+/* ===== Waves ===== */
 .waves{
   position:fixed;
-  bottom:0;
-  left:0;
-  width:100%;
-  height:260px;
+  bottom:0;left:0;
+  width:100%;height:260px;
   z-index:-1;
   pointer-events:none;
 }
 .wave{
   position:absolute;
-  bottom:0;
-  width:200%;
-  height:260px;
+  bottom:0;width:200%;height:260px;
 }
-.wave svg{width:100%;height:100%}
 .wave.back path{fill:#1B263B;opacity:.35}
 .wave.mid path{fill:#415A77;opacity:.45}
 .wave.front path{fill:#778DA9;opacity:.55}
@@ -118,10 +98,7 @@ section{
   margin:auto;
   padding:80px 20px;
 }
-h2{
-  font-size:2rem;
-  margin-bottom:28px;
-}
+h2{font-size:2rem;margin-bottom:28px}
 
 /* ===== Grid ===== */
 .grid{
@@ -130,11 +107,31 @@ h2{
   gap:30px;
 }
 
-/* ===== Card ===== */
+/* ===== Card + Animation ===== */
 .card{
   background:var(--card);
   padding:28px;
   border-radius:18px;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,.35);
+}
+
+/* ===== Skills ===== */
+.skill-icon{
+  font-size:2.2rem;
+  margin-bottom:8px;
+}
+.tags span{
+  display:inline-block;
+  margin:6px 6px 0 0;
+  padding:6px 14px;
+  border-radius:20px;
+  background:rgba(119,141,169,.18);
+  font-size:.85rem;
+  font-weight:600;
 }
 
 /* ===== Learning Chips ===== */
@@ -142,23 +139,19 @@ h2{
   display:flex;
   flex-wrap:wrap;
   gap:12px;
-  margin-top:18px;
+  margin-top:16px;
 }
 .chip{
   padding:8px 16px;
   border-radius:999px;
   background:rgba(119,141,169,.18);
-  color:var(--text);
   font-weight:600;
-  font-size:.9rem;
-  box-shadow:0 0 0 rgba(119,141,169,0);
   animation:pulse 3s ease-in-out infinite;
 }
 .chip:nth-child(2){animation-delay:.4s}
 .chip:nth-child(3){animation-delay:.8s}
 .chip:nth-child(4){animation-delay:1.2s}
 .chip:nth-child(5){animation-delay:1.6s}
-
 @keyframes pulse{
   0%{transform:scale(1)}
   50%{transform:scale(1.05);box-shadow:0 0 18px rgba(119,141,169,.35)}
@@ -168,23 +161,11 @@ h2{
 /* ===== Project Link ===== */
 .project-link{
   display:inline-block;
-  margin-top:16px;
+  margin-top:14px;
   color:var(--text);
   font-weight:600;
   text-decoration:none;
-  position:relative;
 }
-.project-link::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-4px;
-  height:2px;
-  width:0;
-  background:var(--text);
-  transition:.3s;
-}
-.project-link:hover::after{width:100%}
 
 /* ===== Footer ===== */
 footer{
@@ -196,7 +177,6 @@ footer{
   margin-top:10px;
   font-size:.9rem;
   opacity:.8;
-  letter-spacing:.5px;
 }
 </style>
 </head>
@@ -208,7 +188,9 @@ footer{
 <nav>
   <div class="nav-inner">
     <a href="#about">About</a>
+    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
@@ -242,60 +224,73 @@ footer{
 <h2>About Me</h2>
 <div class="card">
 Final-year <strong>B.Tech Electronics & Computer Engineering</strong> student focused on
-<strong>Python, AI, and Automation</strong>. I learn best by building, testing,
-and refining real systems.
-<br><br>
-<strong>Currently Learning</strong>
+<strong>Python, AI, and Automation</strong>.
 <div class="chip-wrap">
-  <div class="chip">Artificial Intelligence</div>
+  <div class="chip">AI</div>
   <div class="chip">Machine Learning</div>
   <div class="chip">Generative AI</div>
-  <div class="chip">Model Integration</div>
+  <div class="chip">Automation</div>
   <div class="chip">Prompt Engineering</div>
 </div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<div class="grid">
+  <div class="card"><div class="skill-icon">🤖</div><h3>AI & Automation</h3><div class="tags"><span>Generative AI</span><span>Gemini API</span></div></div>
+  <div class="card"><div class="skill-icon">🐍</div><h3>Programming</h3><div class="tags"><span>Python</span><span>JavaScript</span></div></div>
+  <div class="card"><div class="skill-icon">🛠</div><h3>Tools</h3><div class="tags"><span>Git</span><span>GitHub</span></div></div>
+  <div class="card"><div class="skill-icon">🌐</div><h3>Web</h3><div class="tags"><span>HTML</span><span>CSS</span></div></div>
 </div>
 </section>
 
 <section id="projects">
 <h2>Projects</h2>
 <div class="grid">
+  <div class="card">
+    <h3>🤖 AUTO-REPLY AI CHATBOT (WhatsApp Automation)</h3>
+    <ul>
+      <li>Funny roast-style AI replies</li>
+      <li>Message analysis</li>
+      <li>Screen automation</li>
+    </ul>
+    <a class="project-link" href="https://github.com/AnujaGaikwad/AUTO-REPLY-AI-CHATBOT-WhatsApp-Automation-" target="_blank">Open Repo ↗</a>
+  </div>
 
-<div class="card">
-<h3>AUTO-REPLY AI CHATBOT (WhatsApp Automation)</h3>
-<ul>
-<li>Reads WhatsApp chats automatically</li>
-<li>Generates funny roast-style AI replies</li>
-<li>Screen-based automation (no official API)</li>
-</ul>
-<a class="project-link"
-href="https://github.com/AnujaGaikwad/AUTO-REPLY-AI-CHATBOT-WhatsApp-Automation-"
-target="_blank">Open Repo ↗</a>
+  <div class="card">
+    <h3>🧠 JARVIS – AI Desktop Assistant</h3>
+    <ul>
+      <li>Voice commands</li>
+      <li>System automation</li>
+      <li>Fallback logic</li>
+    </ul>
+    <a class="project-link" href="https://github.com/AnujaGaikwad/Jarvis-Assistant-" target="_blank">Open Repo ↗</a>
+  </div>
+
+  <div class="card">
+    <h3>📘 AI Learning Projects</h3>
+    <ul>
+      <li>Mini AI & ML projects</li>
+      <li>Hands-on experiments</li>
+      <li>Structured learning</li>
+    </ul>
+    <a class="project-link" href="https://github.com/AnujaGaikwad/ai-learning-series" target="_blank">Open Repo ↗</a>
+  </div>
 </div>
+</section>
 
-<div class="card">
-<h3>JARVIS – AI Desktop Assistant</h3>
-<ul>
-<li>Voice command execution</li>
-<li>System-level automation</li>
-<li>Fallback-safe logic</li>
-</ul>
-<a class="project-link"
-href="https://github.com/AnujaGaikwad/Jarvis-Assistant-"
-target="_blank">Open Repo ↗</a>
-</div>
-
-<div class="card">
-<h3>AI Learning Projects</h3>
-<ul>
-<li>Hands-on AI & ML practice</li>
-<li>Mini Python projects</li>
-<li>Structured experiments</li>
-</ul>
-<a class="project-link"
-href="https://github.com/AnujaGaikwad/ai-learning-series"
-target="_blank">Open Repo ↗</a>
-</div>
-
+<section id="education">
+<h2>Education</h2>
+<div class="grid">
+  <div class="card">
+    <h3>B.Tech – ECE</h3>
+    <p>MBES College of Engineering<br>2023–2026 (Pursuing)</p>
+  </div>
+  <div class="card">
+    <h3>Diploma – Computer Technology</h3>
+    <p>Government Polytechnic, Beed<br>2020–2023</p>
+  </div>
 </div>
 </section>
 
@@ -309,17 +304,15 @@ target="_blank">Open Repo ↗</a>
 </section>
 
 <footer>
-© 2026 Anuja Ramesh Gaikwad  
-<div class="footer-quote">calm depth, quiet strength.</div>
+© 2026 Anuja Ramesh Gaikwad
+<div class="footer-quote">Deep Sea Edition — calm depth, quiet strength.</div>
 </footer>
 
 <script>
-/* Scroll progress + wave parallax */
 window.addEventListener("scroll",()=>{
   const doc=document.documentElement;
   const sc=(doc.scrollTop/(doc.scrollHeight-doc.clientHeight))*100;
   document.getElementById("progress").style.width=sc+"%";
-
   document.querySelector(".wave.back").style.transform=`translateX(${-sc*0.15}px)`;
   document.querySelector(".wave.mid").style.transform=`translateX(${-sc*0.3}px)`;
   document.querySelector(".wave.front").style.transform=`translateX(${-sc*0.5}px)`;
