@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8">
 <title>Anuja Ramesh Gaikwad</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 :root{
@@ -13,261 +13,273 @@
   --text:#E0E1DD;
   --accent:#778DA9;
   --muted:#415A77;
-  --chip-bg:rgba(119,141,169,.18);
-  --grad:linear-gradient(120deg,#415A77,#778DA9,#415A77);
 }
 
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 
 body{
   margin:0;
   font-family:"Segoe UI",system-ui,sans-serif;
-  background:linear-gradient(180deg,var(--bg),var(--bg-soft));
   color:var(--text);
+  background:linear-gradient(180deg,var(--bg),var(--bg-soft));
+  overflow-x:hidden;
 }
 
-/* HEADER */
+/* ================== SCROLL PROGRESS ================== */
+#progress{
+  position:fixed;
+  top:0;
+  left:0;
+  height:3px;
+  width:0%;
+  background:#E0E1DD;
+  z-index:9999;
+}
+
+/* ================== STICKY NAV ================== */
+nav{
+  position:sticky;
+  top:0;
+  z-index:9998;
+  background:rgba(13,27,42,.85);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(224,225,221,.08);
+}
+
+.nav-inner{
+  max-width:1100px;
+  margin:auto;
+  padding:10px 20px;
+  display:flex;
+  justify-content:center;
+  gap:26px;
+}
+
+.nav-inner a{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:600;
+  font-size:.95rem;
+  position:relative;
+}
+
+.nav-inner a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  height:2px;
+  width:0;
+  background:var(--text);
+  transition:.3s;
+}
+
+.nav-inner a:hover::after{
+  width:100%;
+}
+
+/* ================== PARALLAX WAVES ================== */
+.waves{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:260px;
+  z-index:-1;
+  pointer-events:none;
+}
+
+.wave{
+  position:absolute;
+  bottom:0;
+  width:200%;
+  height:260px;
+}
+
+.wave svg{
+  width:100%;
+  height:100%;
+}
+
+.wave.back path{ fill:#1B263B; opacity:.35; }
+.wave.mid  path{ fill:#415A77; opacity:.45; }
+.wave.front path{ fill:#778DA9; opacity:.55; }
+
+/* ================== HEADER ================== */
 header{
-  padding:90px 20px 70px;
+  padding:90px 20px 80px;
   text-align:center;
-  background:
-    radial-gradient(circle at top,rgba(119,141,169,.25),transparent 60%),
-    linear-gradient(135deg,#0D1B2A,#1B263B);
 }
 header h1{
   font-size:3rem;
-  margin-bottom:8px;
-  color:#E0E1DD;
+  margin-bottom:10px;
 }
-header p{
-  font-size:1.15rem;
-  opacity:.9;
-  color:#E0E1DD;
-}
+header p{opacity:.9}
 
 .btn{
   display:inline-block;
   margin-top:22px;
   padding:12px 30px;
   border-radius:30px;
-  background:#E0E1DD;
+  background:var(--text);
   color:#0D1B2A;
   font-weight:700;
   text-decoration:none;
 }
 
-/* LAYOUT */
+/* ================== SECTIONS ================== */
 section{
   max-width:1100px;
   margin:auto;
-  padding:70px 20px;
+  padding:80px 20px;
 }
+
 h2{
   font-size:2rem;
-  color:#E0E1DD;
   margin-bottom:30px;
 }
 
-/* GRID */
+/* ================== GRID ================== */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:30px;
 }
 
-/* CARD */
+/* ================== CARD ================== */
 .card{
-  position:relative;
   background:var(--card);
   padding:28px;
   border-radius:18px;
-  overflow:hidden;
-}
-.card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  padding:2px;
-  border-radius:18px;
-  background:var(--grad);
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite:xor;
-  mask-composite:exclude;
-  opacity:0;
-  transition:.4s;
-}
-.card:hover::before{opacity:1}
-
-/* SKILLS */
-.skill-icon{
-  font-size:2.2rem;
-  margin-bottom:10px;
-  animation:float 3s ease-in-out infinite;
-}
-.delay-1{animation-delay:0s}
-.delay-2{animation-delay:.4s}
-.delay-3{animation-delay:.8s}
-.delay-4{animation-delay:1.2s}
-
-@keyframes float{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-8px)}
-  100%{transform:translateY(0)}
 }
 
-/* TAGS */
-.tags span{
-  display:inline-block;
-  margin:6px 6px 0 0;
-  padding:6px 14px;
-  border-radius:20px;
-  background:rgba(119,141,169,.2);
-  color:#E0E1DD;
-  font-size:.85rem;
-  font-weight:600;
-}
-
-/* CHIPS */
-.chip-wrap{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
-.chip{
-  padding:8px 16px;
-  border-radius:999px;
-  background:var(--chip-bg);
-  color:#E0E1DD;
-  font-weight:600;
-  animation:pulse 2.6s ease-in-out infinite;
-}
-.chip:nth-child(2){animation-delay:.4s}
-.chip:nth-child(3){animation-delay:.8s}
-.chip:nth-child(4){animation-delay:1.2s}
-.chip:nth-child(5){animation-delay:1.6s}
-
-@keyframes pulse{
-  0%{transform:scale(1);box-shadow:none}
-  50%{transform:scale(1.05);box-shadow:0 0 18px rgba(119,141,169,.45)}
-  100%{transform:scale(1);box-shadow:none}
-}
-
-/* PROJECT LINK */
+/* ================== PROJECT LINK ================== */
 .project-link{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
+  display:inline-block;
   margin-top:16px;
+  color:var(--text);
   font-weight:600;
-  color:#E0E1DD;
-  position:relative;
   text-decoration:none;
+  position:relative;
 }
+
 .project-link::after{
   content:"";
   position:absolute;
   left:0;
   bottom:-4px;
-  width:0;
   height:2px;
-  background:#E0E1DD;
+  width:0;
+  background:var(--text);
   transition:.3s;
 }
-.project-link:hover::after{width:100%}
 
-/* LIST */
-ul{padding-left:18px}
-li{margin-bottom:6px}
+.project-link:hover::after{
+  width:100%;
+}
 
-/* FOOTER */
+/* ================== FOOTER ================== */
 footer{
   text-align:center;
   padding:50px;
-  color:#778DA9;
+  color:var(--accent);
 }
-
-/* REVEAL */
-.reveal{opacity:1} 
 </style>
 </head>
 
 <body>
 
+<div id="progress"></div>
+
+<!-- STICKY NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- PARALLAX WAVES -->
+<div class="waves">
+  <div class="wave back">
+    <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+      <path d="M0,120 C200,200 400,40 600,100 800,160 1000,80 1200,120 L1200,200 L0,200 Z"/>
+    </svg>
+  </div>
+  <div class="wave mid">
+    <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+      <path d="M0,100 C250,160 450,60 650,110 850,160 1050,90 1200,120 L1200,200 L0,200 Z"/>
+    </svg>
+  </div>
+  <div class="wave front">
+    <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+      <path d="M0,90 C300,140 500,80 700,120 900,160 1100,100 1200,120 L1200,200 L0,200 Z"/>
+    </svg>
+  </div>
+</div>
+
 <header>
   <h1>Anuja Ramesh Gaikwad</h1>
-  <p>Exploring AI & ML through practical, real-world systems</p>
+  <p>Exploring AI & ML through real-world systems</p>
   <a class="btn" href="./Anuja_Gaikwad_Resume.pdf" target="_blank">Download Resume</a>
 </header>
 
-<section>
+<section id="about">
 <h2>About Me</h2>
 <div class="card">
-Final-year <strong>B.Tech Electronics & Computer Engineering</strong> student with hands-on experience in <strong>Python, Automation, and Generative AI</strong>.  
-I enjoy building intelligent systems, learning by doing, and continuously improving through experimentation.
-<br><br>
-<strong>Currently Learning</strong>
-<div class="chip-wrap">
-  <div class="chip">Artificial Intelligence</div>
-  <div class="chip">Machine Learning</div>
-  <div class="chip">Generative AI</div>
-  <div class="chip">Model Integration</div>
-  <div class="chip">Prompt Engineering</div>
-</div>
+Final-year <strong>B.Tech Electronics & Computer Engineering</strong> student focused on
+<strong>Python, AI, and Automation</strong>.<br><br>
+Currently learning Artificial Intelligence, Machine Learning,
+Generative AI, and practical model integration through hands-on projects.
 </div>
 </section>
 
-<section>
-<h2>Skills</h2>
-<div class="grid">
-  <div class="card"><div class="skill-icon delay-1">🤖</div><h3>AI & Automation</h3><div class="tags"><span>Generative AI</span><span>Gemini API</span></div></div>
-  <div class="card"><div class="skill-icon delay-2">🐍</div><h3>Programming</h3><div class="tags"><span>Python</span><span>JavaScript</span></div></div>
-  <div class="card"><div class="skill-icon delay-3">🛠</div><h3>Tools</h3><div class="tags"><span>Git</span><span>GitHub</span></div></div>
-  <div class="card"><div class="skill-icon delay-4">🌐</div><h3>Web</h3><div class="tags"><span>HTML</span><span>CSS</span></div></div>
-</div>
-</section>
-
-<section>
+<section id="projects">
 <h2>Projects</h2>
 <div class="grid">
 
 <div class="card">
-<h3>WhatsApp Auto-Reply Bot</h3>
+<h3>AUTO-REPLY AI CHATBOT (WhatsApp Automation)</h3>
 <ul>
-<li>AI-based message replies</li>
-<li>Screen automation</li>
-<li>Sentiment-aware logic</li>
+<li>Reads WhatsApp chats automatically</li>
+<li>Generates funny roast-style AI replies</li>
+<li>Screen-based automation (no official API)</li>
 </ul>
-<a class="project-link" href="https://github.com/AnujaGaikwad/AUTO-REPLY-AI-CHATBOT-WhatsApp-Automation-" target="_blank">
-Open Repo ↗
-</a>
+<a class="project-link"
+href="https://github.com/AnujaGaikwad/AUTO-REPLY-AI-CHATBOT-WhatsApp-Automation-"
+target="_blank">Open Repo ↗</a>
 </div>
 
 <div class="card">
 <h3>JARVIS – AI Desktop Assistant</h3>
 <ul>
 <li>Voice command execution</li>
-<li>System automation</li>
+<li>System-level automation</li>
 <li>Fallback-safe logic</li>
 </ul>
-<a class="project-link" href="https://github.com/AnujaGaikwad/Jarvis-Assistant-" target="_blank">
-Open Repo ↗
-</a>
+<a class="project-link"
+href="https://github.com/AnujaGaikwad/Jarvis-Assistant-"
+target="_blank">Open Repo ↗</a>
 </div>
 
 <div class="card">
-<h3>AI Learning Series</h3>
+<h3>AI Learning Projects</h3>
 <ul>
-<li>Daily AI experiments</li>
+<li>Hands-on AI & ML practice</li>
 <li>Mini Python projects</li>
-<li>Structured learning</li>
+<li>Structured experiments</li>
 </ul>
-<a class="project-link" href="https://github.com/AnujaGaikwad/ai-learning-series" target="_blank">
-Open Repo ↗
-</a>
+<a class="project-link"
+href="https://github.com/AnujaGaikwad/ai-learning-series"
+target="_blank">Open Repo ↗</a>
 </div>
 
 </div>
 </section>
 
-<section>
+<section id="contact">
 <h2>Contact</h2>
 <div class="card">
 📧 anujag2020@gmail.com<br><br>
@@ -277,8 +289,21 @@ Open Repo ↗
 </section>
 
 <footer>
-© 2025 Anuja Ramesh Gaikwad • Deep Sea Edition
+© 2026 Anuja Ramesh Gaikwad • Deep Sea Edition
 </footer>
+
+<script>
+/* SCROLL PROGRESS + WAVE PARALLAX */
+window.addEventListener("scroll",()=>{
+  const doc=document.documentElement;
+  const sc=(doc.scrollTop/(doc.scrollHeight-doc.clientHeight))*100;
+  document.getElementById("progress").style.width=sc+"%";
+
+  document.querySelector(".wave.back").style.transform=`translateX(${-sc*0.15}px)`;
+  document.querySelector(".wave.mid").style.transform=`translateX(${-sc*0.3}px)`;
+  document.querySelector(".wave.front").style.transform=`translateX(${-sc*0.5}px)`;
+});
+</script>
 
 </body>
 </html>
