@@ -12,13 +12,8 @@
       --card: rgba(2,6,23,0.9);
       --text: #e5e7eb;
       --accent: #38bdf8;
-      --border-gradient: linear-gradient(
-        120deg,
-        #38bdf8,
-        #6366f1,
-        #22d3ee,
-        #38bdf8
-      );
+      --chip-bg: rgba(56,189,248,0.12);
+      --border-gradient: linear-gradient(120deg,#38bdf8,#6366f1,#22d3ee,#38bdf8);
     }
 
     .light {
@@ -27,11 +22,10 @@
       --card: #ffffff;
       --text: #020617;
       --accent: #2563eb;
+      --chip-bg: rgba(37,99,235,0.12);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -49,15 +43,8 @@
       color: #020617;
     }
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 8px;
-    }
-
-    header p {
-      font-size: 1.15rem;
-      opacity: 0.9;
-    }
+    header h1 { font-size: 3rem; margin-bottom: 8px; }
+    header p { font-size: 1.15rem; opacity: 0.9; }
 
     .btn {
       display: inline-block;
@@ -68,11 +55,6 @@
       border-radius: 30px;
       font-weight: 700;
       text-decoration: none;
-      transition: transform 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
     }
 
     section {
@@ -81,11 +63,7 @@
       padding: 60px 20px;
     }
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 26px;
-      color: var(--accent);
-    }
+    h2 { font-size: 2rem; margin-bottom: 26px; color: var(--accent); }
 
     .grid {
       display: grid;
@@ -115,62 +93,45 @@
       -webkit-mask-composite: xor;
       mask-composite: exclude;
       opacity: 0;
-      transition: opacity 0.4s ease;
       animation: borderMove 3s linear infinite;
+      transition: opacity 0.4s ease;
     }
 
-    .card:hover::before {
-      opacity: 1;
-    }
+    .card:hover::before { opacity: 1; }
 
     @keyframes borderMove {
-      0% {
-        filter: hue-rotate(0deg);
-      }
-      100% {
-        filter: hue-rotate(360deg);
-      }
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
     }
 
-    /* ===== Animated AI Icons ===== */
-    .skill-icon {
-      font-size: 2.3rem;
-      margin-bottom: 10px;
-      display: inline-block;
-      animation: float 3s ease-in-out infinite;
+    /* ===== Animated Learning Chips ===== */
+    .chip-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 14px;
     }
 
-    .delay-1 { animation-delay: 0s; }
-    .delay-2 { animation-delay: 0.4s; }
-    .delay-3 { animation-delay: 0.8s; }
-    .delay-4 { animation-delay: 1.2s; }
-
-    @keyframes float {
-      0%   { transform: translateY(0); }
-      50%  { transform: translateY(-8px); }
-      100% { transform: translateY(0); }
-    }
-
-    .card:hover .skill-icon {
-      text-shadow: 0 0 14px rgba(56,189,248,0.9);
-      transform: scale(1.12);
-    }
-
-    .tags span {
-      display: inline-block;
-      margin: 6px 6px 0 0;
-      padding: 6px 14px;
-      border-radius: 20px;
-      background: rgba(56,189,248,0.15);
+    .chip {
+      position: relative;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: var(--chip-bg);
       color: var(--accent);
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 600;
+      animation: pulse 2.8s ease-in-out infinite;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
+    .chip:nth-child(2) { animation-delay: 0.4s; }
+    .chip:nth-child(3) { animation-delay: 0.8s; }
+    .chip:nth-child(4) { animation-delay: 1.2s; }
+    .chip:nth-child(5) { animation-delay: 1.6s; }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 rgba(56,189,248,0.0); }
+      50% { transform: scale(1.05); box-shadow: 0 0 18px rgba(56,189,248,0.45); }
+      100% { transform: scale(1); box-shadow: 0 0 0 rgba(56,189,248,0.0); }
     }
 
     .reveal {
@@ -179,16 +140,12 @@
       transition: all 0.8s ease;
     }
 
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.active { opacity: 1; transform: translateY(0); }
 
     footer {
       text-align: center;
       padding: 40px;
       color: #94a3b8;
-      font-size: 0.95rem;
     }
 
     .theme-toggle {
@@ -203,7 +160,6 @@
       color: var(--accent);
       font-size: 18px;
       cursor: pointer;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
   </style>
 </head>
@@ -213,10 +169,7 @@
 <header>
   <h1>Anuja Ramesh Gaikwad</h1>
   <p>Building practical AI systems with Python</p>
-
-  <a class="btn" href="./Anuja_Gaikwad_Resume.pdf" target="_blank">
-    Download Resume
-  </a>
+  <a class="btn" href="./Anuja_Gaikwad_Resume.pdf" target="_blank">Download Resume</a>
 </header>
 
 <section class="reveal">
@@ -225,55 +178,17 @@
     Final-year <strong>B.Tech Electronics & Computer Engineering</strong> student
     with hands-on experience in <strong>Python, Automation, and Generative AI</strong>.
     I focus on building intelligent systems and improving them through real-world use.
-  </div>
-</section>
 
-<section class="reveal">
-  <h2>Skills</h2>
+    <br><br>
+    <strong>Currently Learning</strong>
 
-  <div class="grid">
-
-    <div class="card">
-      <div class="skill-icon delay-1">🤖</div>
-      <h3>AI & Automation</h3>
-      <div class="tags">
-        <span>Generative AI</span>
-        <span>Gemini API</span>
-        <span>Prompt Engineering</span>
-        <span>Automation Logic</span>
-      </div>
+    <div class="chip-wrap">
+      <div class="chip">Artificial Intelligence</div>
+      <div class="chip">Machine Learning</div>
+      <div class="chip">Generative AI</div>
+      <div class="chip">Model Integration</div>
+      <div class="chip">Prompt Engineering</div>
     </div>
-
-    <div class="card">
-      <div class="skill-icon delay-2">🐍</div>
-      <h3>Programming</h3>
-      <div class="tags">
-        <span>Python</span>
-        <span>JavaScript (Basic)</span>
-        <span>Problem Solving</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="skill-icon delay-3">🛠</div>
-      <h3>Tools & Platforms</h3>
-      <div class="tags">
-        <span>Git & GitHub</span>
-        <span>PyCharm</span>
-        <span>VS Code</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="skill-icon delay-4">🌐</div>
-      <h3>Web Basics</h3>
-      <div class="tags">
-        <span>HTML5</span>
-        <span>CSS3</span>
-        <span>Responsive Design</span>
-      </div>
-    </div>
-
   </div>
 </section>
 
