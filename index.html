@@ -581,22 +581,6 @@ function observeReveals(){
 observeReveals();
 observeReveals();
 
-/* ---------- mouse glow ---------- */
-(function(){
-  const glow = document.getElementById('cursor-glow');
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  let raf=null;
-  window.addEventListener('mousemove', (e)=>{
-    glow.style.opacity = '1';
-    if(raf) cancelAnimationFrame(raf);
-    raf = requestAnimationFrame(()=>{
-      glow.style.left = e.clientX+'px';
-      glow.style.top = e.clientY+'px';
-    });
-  });
-  window.addEventListener('mouseleave', ()=>{ glow.style.opacity = '0'; });
-})();
-
 /* ---------- floating particles ---------- */
 (function(){
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
