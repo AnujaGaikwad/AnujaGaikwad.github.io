@@ -169,11 +169,16 @@
   .proj-top h3{font-size:1.12rem;margin-top:4px}
   .proj-tag{font-family:var(--mono);font-size:.65rem;color:var(--accent);border:1px solid var(--border-hi);padding:3px 9px;border-radius:99px;white-space:nowrap}
   .proj-card p{color:var(--muted);font-size:.92rem}
+  .proj-result{font-family:var(--mono);font-size:.76rem;color:var(--text);background:var(--accent-soft);border:1px dashed var(--border-hi);padding:8px 12px;border-radius:8px}
   .proj-feats{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:2px}
   .proj-feats li{font-size:.85rem;color:var(--muted);padding-left:20px;position:relative}
   .proj-feats li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:600}
   .stack-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:8px}
   .stack-row span{font-family:var(--mono);font-size:.68rem;background:rgba(224,225,221,.06);color:var(--muted);padding:4px 9px;border-radius:6px}
+  .proj-link{font-family:var(--mono);font-size:.78rem;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-top:4px;padding-top:10px;border-top:1px solid var(--border)}
+  .proj-link:hover{color:var(--text)}
+  .proj-link::after{content:"→";transition:transform .2s ease}
+  .proj-link:hover::after{transform:translateX(3px)}
 
   /* skills */
   .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
@@ -203,8 +208,9 @@
   /* certs */
   .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
   .cert-card{display:flex;gap:14px;align-items:center;padding:22px}
-  .cert-icon{font-family:var(--mono);font-size:.7rem;color:var(--bg);background:var(--accent);width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700}
-  .cert-card h4{font-size:.94rem}
+  .cert-icon{font-family:var(--mono);font-size:.66rem;color:var(--bg);background:var(--accent);width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700}
+  .cert-card h4{font-size:.9rem;line-height:1.35}
+  .cert-card .cert-sub{font-size:.76rem;color:var(--muted);margin-top:3px;font-family:var(--mono)}
 
   /* contact */
   .contact-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
@@ -243,11 +249,14 @@
 <header class="hero">
   <svg id="hero-net"></svg>
   <div class="wrap hero-grid">
-    <div class="hero-kicker">Final-year B.Tech · Electronics &amp; Computer Engineering</div>
+    <div class="hero-kicker">Final-year B.Tech · Electronics &amp; Computer Engineering · Graduating Aug 2026</div>
     <h1>Anuja Gaikwad</h1>
     <div class="hero-role">I build with <span id="typed"></span><span class="cursor">&nbsp;</span></div>
     <p class="hero-desc">Building intelligent AI applications, automation tools, and data-driven solutions using Python, Machine Learning, and modern analytics.</p>
     <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      <a href="[add link to resume PDF]" class="btn btn-ghost">Download Resume</a>
     </div>
   </div>
 </header>
@@ -261,16 +270,16 @@
       <div class="about-lines">
         <p>Final-year <strong>Electronics &amp; Computer Engineering</strong> student.</p>
         <p>Passionate about <strong>Python, AI, Machine Learning</strong> and <strong>Data Analytics</strong>.</p>
-        <p>I enjoy building real-world applications — deep learning models, automation tools, and interactive dashboards.</p>
-        <p>Currently looking for entry-level <strong>Software Development, AI/ML</strong>, and <strong>Data Analytics</strong> opportunities.</p>
+        <p>I enjoy building real-world applications — deep learning models, automation tools, and interactive dashboards — and taking them past the notebook stage into something that actually runs.</p>
+        <p>Currently looking for entry-level <strong>AI/ML, Python Development</strong>, and <strong>Data Analytics</strong> opportunities.</p>
       </div>
     </div>
     <div class="reveal">
       <ul class="focus-list">
         <li><span class="tag">CORE</span> Python, SQL, Pandas &amp; NumPy</li>
         <li><span class="tag">APPLIED</span> Machine Learning &amp; Deep Learning with TensorFlow/Keras</li>
-        <li><span class="tag">APPLIED</span> Data Analytics — EDA, dashboards, Excel/Power BI/Tableau</li>
-        <li><span class="tag">SHIPPED</span> 5 end-to-end Python &amp; AI projects</li>
+        <li><span class="tag">APPLIED</span> Data Analytics — EDA, dashboards, Excel/Tableau</li>
+        <li><span class="tag">SHIPPED</span> 4 end-to-end Python &amp; AI projects</li>
         <li><span class="tag">STATUS</span> Open to entry-level opportunities</li>
       </ul>
     </div>
@@ -282,7 +291,7 @@
   <div class="wrap">
     <div class="eyebrow reveal">Featured Projects</div>
     <h2 class="reveal">Things I've actually shipped</h2>
-    <p class="section-sub reveal">Five end-to-end projects spanning image classification, automation, and data analysis.</p>
+    <p class="section-sub reveal">Four end-to-end projects spanning image classification, LLM-powered automation, and data analysis.</p>
     <div class="proj-grid" id="projGrid"></div>
   </div>
 </section>
@@ -317,7 +326,7 @@
         <div class="edu-year">2023–2026</div>
         <div>
           <h3>B.Tech — Electronics &amp; Computer Engineering</h3>
-          <p>M.B.E.S. College of Engineering, Ambajogai (DBATU) · CGPA 7.2</p>
+          <p>M.B.E.S. College of Engineering, Ambajogai (DBATU) · CGPA 7.2 · Expected Aug 2026</p>
         </div>
       </div>
       <div class="edu-item">
@@ -334,7 +343,7 @@
 <!-- CERTIFICATIONS -->
 <section id="certifications">
   <div class="wrap">
-    <div class="eyebrow reveal">Certifications</div>
+    <div class="eyebrow reveal">Certifications &amp; Achievements</div>
     <h2 class="reveal">Credentials</h2>
     <div class="cert-grid" id="certGrid"></div>
   </div>
@@ -345,7 +354,7 @@
   <div class="wrap">
     <div class="eyebrow reveal">Contact</div>
     <h2 class="reveal">Let's talk</h2>
-    <p class="section-sub reveal">Open to entry-level Data Analyst, Python Developer, and AI/ML roles.</p>
+    <p class="section-sub reveal">Open to entry-level AI/ML, Python Developer, and Data Analytics roles.</p>
     <div class="contact-cards" id="contactCards"></div>
   </div>
 </section>
@@ -363,46 +372,47 @@ const projects = [
   {
     tag:"Deep Learning",
     title:"Flower Recognition System",
-    desc:"CNN-based flower classification system capable of recognizing five flower species from uploaded images.",
-    feats:["Image preprocessing pipeline","Custom CNN architecture","Real-time prediction","Web interface via Streamlit"],
-    stack:["Python","TensorFlow","Keras","OpenCV","NumPy"]
+    desc:"CNN-based image classifier trained to recognize five flower species, deployed as a live web app for real-time predictions.",
+    result:"[add: test accuracy, e.g. 92%]",
+    feats:["Image preprocessing &amp; data augmentation pipeline","Custom CNN architecture built with TensorFlow/Keras","Real-time prediction via Streamlit web interface"],
+    stack:["Python","TensorFlow","Keras","OpenCV","NumPy","Streamlit"],
+    link:"[add GitHub repo link]"
   },
   {
-    tag:"Automation",
+    tag:"Generative AI",
     title:"JARVIS — AI Desktop Assistant",
-    desc:"Voice-controlled desktop assistant that executes commands and automates routine Windows tasks.",
-    feats:["Voice command recognition","Multi-threaded task execution","Conversational responses via Gemini API"],
-    stack:["Python","Speech Recognition","Gemini API"]
+    desc:"Voice-controlled desktop assistant that executes commands, automates routine Windows tasks, and holds context-aware conversations via an LLM.",
+    result:"[add: e.g. avg response time / commands supported]",
+    feats:["Real-time voice command recognition","Multi-threaded architecture for non-blocking execution","Gemini API (LLM) integration for conversational responses"],
+    stack:["Python","Speech Recognition","Gemini API"],
+    link:"https://github.com/AnujaGaikwad/jarvis-ai-desktop-assistant"
   },
   {
-    tag:"Automation",
+    tag:"NLP / Automation",
     title:"AI WhatsApp Auto-Reply Bot",
-    desc:"Reads incoming WhatsApp messages and generates context-aware replies automatically.",
-    feats:["Rule-based + AI-generated responses","Context-aware reply logic","Gemini API integration"],
-    stack:["Python","NLP","TextBlob","Gemini API"]
+    desc:"Automation chatbot that reads incoming WhatsApp messages and generates context-aware replies without manual input.",
+    result:"[add: e.g. messages handled correctly in testing]",
+    feats:["Rule-based NLP intent parsing","Gemini API integration for contextual reply generation","Runs as a background automation workflow"],
+    stack:["Python","NLP","TextBlob","Gemini API"],
+    link:"https://github.com/AnujaGaikwad/AUTO-REPLY-AI-CHATBOT-WhatsApp-Automation-"
   },
   {
     tag:"Data Analysis",
     title:"Movie Ratings Analysis",
-    desc:"Cleaned and analyzed a raw movie ratings dataset to surface trends in audience scoring.",
-    feats:["Data cleaning on a raw dataset","Groupby aggregation &amp; correlation analysis","Visual trend reporting"],
-    stack:["Python","Pandas","Matplotlib","Seaborn"]
-  },
-  {
-    tag:"Web App",
-    title:"Weather Web App",
-    desc:"Responsive web app that fetches and displays live weather data for any location.",
-    feats:["Real-time public API integration","Responsive front-end layout","Error-handled data fetching"],
-    stack:["Python","API Integration","HTML","CSS"]
+    desc:"Cleaned and analyzed a raw movie ratings dataset to surface trends in audience scoring and support data-informed conclusions.",
+    result:"[add: e.g. dataset size / key finding in one line]",
+    feats:["Resolved nulls, duplicates &amp; type mismatches with Pandas","Groupby aggregation &amp; correlation analysis","Trend visualization via histograms, bar charts &amp; heatmaps"],
+    stack:["Python","Pandas","Matplotlib","Seaborn"],
+    link:"[add GitHub repo link]"
   },
 ];
 
 const skillGroups = [
-  {cat:"Programming", items:["Python","SQL","HTML","CSS","JavaScript"]},
-  {cat:"AI & Machine Learning", items:["Machine Learning","Deep Learning","TensorFlow","Keras","OpenCV","NLP"]},
-  {cat:"Data Analytics", items:["Pandas","NumPy","Matplotlib","Seaborn","Excel","Power BI","Tableau","EDA"]},
-  {cat:"Tools", items:["Git","GitHub","VS Code","Jupyter","Streamlit","FastAPI"]},
-  {cat:"Database", items:["MySQL","SQLite"]},
+  {cat:"Programming", items:["Python","SQL"]},
+  {cat:"AI & Machine Learning", items:["Machine Learning","Deep Learning","CNN","TensorFlow","Keras","OpenCV","NLP"]},
+  {cat:"Generative AI", items:["Gemini API","Prompt Engineering","Conversational AI"]},
+  {cat:"Data Analytics", items:["Pandas","NumPy","Matplotlib","Seaborn","EDA","Excel","Tableau"]},
+  {cat:"Tools", items:["Git","GitHub","Jupyter Notebook","Streamlit"]},
 ];
 
 const experience = [
@@ -411,9 +421,9 @@ const experience = [
     org:"Deloitte (via Forage)",
     date:"2026",
     points:[
-      "Completed a simulated data analytics engagement modeled on real client work",
-      "Performed data classification, analysis, and forensic technology tasks",
-      "Delivered findings in a structured, client-ready format"
+      "Completed a self-paced simulated analytics exercise modeled on real client work",
+      "Analyzed business metrics and customer data using Tableau and Excel to identify trends",
+      "Created data-driven visualizations and dashboards for stakeholder reporting"
     ]
   },
   {
@@ -421,30 +431,33 @@ const experience = [
     org:"InternPe",
     date:"Jul – Aug 2025",
     points:[
-      "Developed Python programs solving real-world programming tasks",
-      "Worked with file handling, OOP, and automation",
+      "Completed a hands-on Python internship covering scripting, data structures, and automation basics",
+      "Worked on real coding tasks with mentor feedback",
       "Improved debugging and problem-solving skills"
     ]
   },
   {
     title:"Web Development Internship",
-    org:"Owntap Consultancy Services",
-    date:"2025",
+    org:"Owntap Consultancy Services, Beed",
+    date:"Jun – Aug 2023",
     points:[
-      "Contributed to front-end development using HTML, CSS, and JavaScript",
-      "Worked on responsive layouts and UI fixes for live pages",
+      "Built responsive, mobile-friendly web pages using HTML, CSS, and JavaScript for client projects",
+      "Worked on layout and UI fixes for live client pages",
       "Collaborated with a small team under real project deadlines"
     ]
   },
 ];
 
 const certs = [
-  {ic:"GfG", title:"Data Analytics Course — GeeksforGeeks"},
-  {ic:"NW", title:"Generative AI Workshop — NxtWave"},
+  {ic:"GfG", title:"Data Analytics Training Certificate", sub:"GeeksforGeeks (GfG), Jul 2026"},
+  {ic:"NW", title:"Generative AI Workshop Certificate", sub:"NxtWave"},
+  {ic:"IP", title:"Python Programming Internship Certificate", sub:"InternPe"},
+  {ic:"AI", title:"India AI Impact Buildathon — Participant", sub:"HCL GUVI, Feb 2026"},
 ];
 
 const contacts = [
   {ic:"@", lbl:"Email", val:"anujag2020@gmail.com", href:"mailto:anujag2020@gmail.com"},
+  {ic:"☎", lbl:"Phone", val:"+91 7875339986", href:"tel:+917875339986"},
   {ic:"in", lbl:"LinkedIn", val:"linkedin.com/in/er-anuja-gaikwad", href:"https://www.linkedin.com/in/er-anuja-gaikwad"},
   {ic:"&lt;/&gt;", lbl:"GitHub", val:"github.com/AnujaGaikwad", href:"https://github.com/AnujaGaikwad"},
   {ic:"◎", lbl:"Location", val:"Pune, Maharashtra, India", href:null},
@@ -465,8 +478,10 @@ projects.forEach((p,i)=>{
         <span class="proj-tag">${p.tag}</span>
       </div>
       <p>${p.desc}</p>
+      <div class="proj-result">${p.result}</div>
       <ul class="proj-feats">${p.feats.map(f=>`<li>${f}</li>`).join('')}</ul>
       <div class="stack-row">${p.stack.map(s=>`<span>${s}</span>`).join('')}</div>
+      <a class="proj-link" href="${p.link}" target="_blank" rel="noopener">View on GitHub</a>
     </div>
   `));
 });
@@ -502,7 +517,7 @@ certs.forEach(c=>{
   certGrid.appendChild(el(`
     <div class="card cert-card reveal">
       <div class="cert-icon">${c.ic}</div>
-      <div><h4>${c.title}</h4></div>
+      <div><h4>${c.title}</h4><div class="cert-sub">${c.sub}</div></div>
     </div>
   `));
 });
