@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anuja Gaikwad — Python Developer · AI & ML · Data Analytics</title>
-<meta name="description" content="Portfolio of Anuja Gaikwad, final-year Electronics & Computer Engineering student building AI, Machine Learning, and Data Analytics projects with Python.">
+<meta name="description" content="Portfolio of Anuja Gaikwad, B.Tech graduate in Electronics & Computer Engineering building AI, Machine Learning, and Data Analytics projects with Python.">
 <meta property="og:title" content="Anuja Gaikwad — Python Developer · AI & ML · Data Analytics">
 <meta property="og:description" content=" Building intelligent AI applications, automation tools, and data-driven solutions using Python, Machine Learning, and modern analytics.">
 <meta property="og:type" content="website">
@@ -249,14 +249,13 @@
 <header class="hero">
   <svg id="hero-net"></svg>
   <div class="wrap hero-grid">
-    <div class="hero-kicker">Final-year B.Tech · Electronics &amp; Computer Engineering · Graduating Aug 2026</div>
+    <div class="hero-kicker">B.Tech Graduate · Electronics &amp; Computer Engineering · Class of 2026</div>
     <h1>Anuja Gaikwad</h1>
     <div class="hero-role">I build with <span id="typed"></span><span class="cursor">&nbsp;</span></div>
     <p class="hero-desc">Building intelligent AI applications, automation tools, and data-driven solutions using Python, Machine Learning, and modern analytics.</p>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">View Projects</a>
       <a href="#contact" class="btn btn-ghost">Get in Touch</a>
-      <a href="[add link to resume PDF]" class="btn btn-ghost">Download Resume</a>
     </div>
   </div>
 </header>
@@ -268,7 +267,7 @@
       <div class="eyebrow">About</div>
       <h2>Python developer with a builder's mindset</h2>
       <div class="about-lines">
-        <p>Final-year <strong>Electronics &amp; Computer Engineering</strong> student.</p>
+        <p>B.Tech graduate in <strong>Electronics &amp; Computer Engineering</strong>, Class of 2026.</p>
         <p>Passionate about <strong>Python, AI, Machine Learning</strong> and <strong>Data Analytics</strong>.</p>
         <p>I enjoy building real-world applications — deep learning models, automation tools, and interactive dashboards — and taking them past the notebook stage into something that actually runs.</p>
         <p>Currently looking for entry-level <strong>AI/ML, Python Development</strong>, and <strong>Data Analytics</strong> opportunities.</p>
@@ -326,7 +325,7 @@
         <div class="edu-year">2023–2026</div>
         <div>
           <h3>B.Tech — Electronics &amp; Computer Engineering</h3>
-          <p>M.B.E.S. College of Engineering, Ambajogai (DBATU) · CGPA 7.2 · Expected Aug 2026</p>
+          <p>M.B.E.S. College of Engineering, Ambajogai (DBATU) · CGPA 7.2 · Graduated Aug 2026</p>
         </div>
       </div>
       <div class="edu-item">
@@ -373,16 +372,13 @@ const projects = [
     tag:"Deep Learning",
     title:"Flower Recognition System",
     desc:"CNN-based image classifier trained to recognize five flower species, deployed as a live web app for real-time predictions.",
-    result:"[add: test accuracy, e.g. 92%]",
     feats:["Image preprocessing &amp; data augmentation pipeline","Custom CNN architecture built with TensorFlow/Keras","Real-time prediction via Streamlit web interface"],
-    stack:["Python","TensorFlow","Keras","OpenCV","NumPy","Streamlit"],
-    link:"[add GitHub repo link]"
+    stack:["Python","TensorFlow","Keras","OpenCV","NumPy","Streamlit"]
   },
   {
     tag:"Generative AI",
     title:"JARVIS — AI Desktop Assistant",
     desc:"Voice-controlled desktop assistant that executes commands, automates routine Windows tasks, and holds context-aware conversations via an LLM.",
-    result:"[add: e.g. avg response time / commands supported]",
     feats:["Real-time voice command recognition","Multi-threaded architecture for non-blocking execution","Gemini API (LLM) integration for conversational responses"],
     stack:["Python","Speech Recognition","Gemini API"],
     link:"https://github.com/AnujaGaikwad/jarvis-ai-desktop-assistant"
@@ -391,7 +387,6 @@ const projects = [
     tag:"NLP / Automation",
     title:"AI WhatsApp Auto-Reply Bot",
     desc:"Automation chatbot that reads incoming WhatsApp messages and generates context-aware replies without manual input.",
-    result:"[add: e.g. messages handled correctly in testing]",
     feats:["Rule-based NLP intent parsing","Gemini API integration for contextual reply generation","Runs as a background automation workflow"],
     stack:["Python","NLP","TextBlob","Gemini API"],
     link:"https://github.com/AnujaGaikwad/AUTO-REPLY-AI-CHATBOT-WhatsApp-Automation-"
@@ -400,10 +395,8 @@ const projects = [
     tag:"Data Analysis",
     title:"Movie Ratings Analysis",
     desc:"Cleaned and analyzed a raw movie ratings dataset to surface trends in audience scoring and support data-informed conclusions.",
-    result:"[add: e.g. dataset size / key finding in one line]",
     feats:["Resolved nulls, duplicates &amp; type mismatches with Pandas","Groupby aggregation &amp; correlation analysis","Trend visualization via histograms, bar charts &amp; heatmaps"],
-    stack:["Python","Pandas","Matplotlib","Seaborn"],
-    link:"[add GitHub repo link]"
+    stack:["Python","Pandas","Matplotlib","Seaborn"]
   },
 ];
 
@@ -478,10 +471,10 @@ projects.forEach((p,i)=>{
         <span class="proj-tag">${p.tag}</span>
       </div>
       <p>${p.desc}</p>
-      <div class="proj-result">${p.result}</div>
+      ${p.result ? `<div class="proj-result">${p.result}</div>` : ''}
       <ul class="proj-feats">${p.feats.map(f=>`<li>${f}</li>`).join('')}</ul>
       <div class="stack-row">${p.stack.map(s=>`<span>${s}</span>`).join('')}</div>
-      <a class="proj-link" href="${p.link}" target="_blank" rel="noopener">View on GitHub</a>
+      ${p.link ? `<a class="proj-link" href="${p.link}" target="_blank" rel="noopener">View on GitHub</a>` : ''}
     </div>
   `));
 });
