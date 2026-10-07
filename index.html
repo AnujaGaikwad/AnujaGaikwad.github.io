@@ -63,16 +63,6 @@
   section{padding:110px 0;position:relative}
   @media(max-width:720px){section{padding:76px 0}}
 
-  /* mouse glow */
-  #cursor-glow{
-    position:fixed;top:0;left:0;width:420px;height:420px;
-    border-radius:50%;pointer-events:none;z-index:1;
-    background:radial-gradient(circle,var(--accent-glow) 0%,transparent 70%);
-    opacity:0;transition:opacity .4s ease;
-    transform:translate(-50%,-50%);
-    mix-blend-mode:screen;
-  }
-  @media(max-width:900px){#cursor-glow{display:none}}
 
   /* floating particles */
   #particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
@@ -227,7 +217,6 @@
 <body>
 
 <div id="particles"></div>
-<div id="cursor-glow"></div>
 <div id="scrollbar"></div>
 
 <nav>
@@ -249,7 +238,7 @@
 <header class="hero">
   <svg id="hero-net"></svg>
   <div class="wrap hero-grid">
-    <div class="hero-kicker">B.Tech · Electronics &amp; Computer Engineering · Class of 2026</div>
+    <div class="hero-kicker">B.Tech Graduate · Electronics &amp; Computer Engineering · August 2026</div>
     <h1>Anuja Gaikwad</h1>
     <div class="hero-role">I build with <span id="typed"></span><span class="cursor">&nbsp;</span></div>
     <p class="hero-desc">
@@ -269,10 +258,10 @@
       <div class="eyebrow">About</div>
       <h2>Python developer with a cloud + AI mindset</h2>
       <div class="about-lines">
-        <p>B.Tech student in <strong>Electronics &amp; Computer Engineering</strong>, Class of 2026.</p>
+        <p>B.Tech graduate in <strong>Electronics &amp; Computer Engineering</strong>, August 2026.</p>
         <p>I build practical systems with <strong>Python, AWS, AI/ML, Generative AI and automation</strong>.</p>
         <p>My projects focus on taking ideas beyond a local script: connecting APIs, cloud services, databases, AI models, automation workflows and deployment into working applications.</p>
-        <p>Currently focused on <strong>Python Developer, AWS/Cloud, AI/ML and AI Automation</strong> opportunities.</p>
+        <p>Now focused on <strong>Python Developer, AWS/Cloud, AI/ML and AI Automation</strong> opportunities.</p>
       </div>
     </div>
     <div class="reveal">
@@ -323,7 +312,7 @@
         <div class="edu-year">2023–2026</div>
         <div>
           <h3>B.Tech — Electronics &amp; Computer Engineering</h3>
-          <p>M.B.E.S. College of Engineering, Ambajogai · Dr. Babasaheb Ambedkar Technological University (DBATU) · Expected 2026</p>
+          <p>M.B.E.S. College of Engineering, Ambajogai · Dr. Babasaheb Ambedkar Technological University (DBATU) · Graduated August 2026</p>
         </div>
       </div>
       <div class="edu-item">
@@ -685,17 +674,6 @@ document.querySelectorAll('.reveal').forEach(elm=>revealObserver.observe(elm));
   if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches) frame();
 })();
 
-/* cursor glow */
-(function(){
-  const glow=document.getElementById('cursor-glow');
-  if(!glow || window.matchMedia('(max-width:900px)').matches) return;
-  window.addEventListener('mousemove',e=>{
-    glow.style.left=e.clientX+'px';
-    glow.style.top=e.clientY+'px';
-    glow.style.opacity='.55';
-  });
-  window.addEventListener('mouseleave',()=>glow.style.opacity='0');
-})();
 </script>
 
 </body>
