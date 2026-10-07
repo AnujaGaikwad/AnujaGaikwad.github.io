@@ -1,1345 +1,702 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Anuja Gaikwad | Python Developer | AWS • AI • Automation</title>
-
-    <meta name="description"
-          content="Anuja Gaikwad is a Python Developer focused on AWS, AI, Generative AI, automation, backend development and cloud applications.">
-
-    <meta name="keywords"
-          content="Anuja Gaikwad, Python Developer, AWS Developer, AI Developer, Generative AI, Automation, Python, Cloud, AWS, Machine Learning">
-
-    <meta name="author" content="Anuja Gaikwad">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg: #0a0a0f;
-            --card: #111118;
-            --card-hover: #171721;
-            --text: #f5f5f7;
-            --muted: #a4a4b2;
-            --line: #252532;
-            --accent: #8b5cf6;
-            --accent-2: #06b6d4;
-            --white: #ffffff;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family:
-                Inter,
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                sans-serif;
-
-            background:
-                radial-gradient(
-                    circle at 80% 10%,
-                    rgba(139, 92, 246, 0.13),
-                    transparent 28%
-                ),
-                radial-gradient(
-                    circle at 10% 30%,
-                    rgba(6, 182, 212, 0.08),
-                    transparent 25%
-                ),
-                var(--bg);
-
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .container {
-            width: min(1120px, 92%);
-            margin: auto;
-        }
-
-        /* NAVIGATION */
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-
-            backdrop-filter: blur(16px);
-            background: rgba(10, 10, 15, 0.82);
-
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-
-        .nav-inner {
-            min-height: 70px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 1.15rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 28px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--muted);
-            font-size: 0.92rem;
-            transition: 0.25s;
-        }
-
-        .nav-links a:hover {
-            color: var(--white);
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 88vh;
-
-            display: flex;
-            align-items: center;
-
-            padding: 90px 0;
-        }
-
-        .hero-content {
-            max-width: 850px;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-
-            padding: 8px 14px;
-
-            border: 1px solid var(--line);
-            border-radius: 999px;
-
-            color: var(--muted);
-            background: rgba(255,255,255,0.025);
-
-            font-size: 0.86rem;
-            margin-bottom: 24px;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #22c55e;
-            box-shadow: 0 0 12px rgba(34,197,94,0.7);
-        }
-
-        h1 {
-            font-size: clamp(3rem, 7vw, 6.3rem);
-            line-height: 0.98;
-            letter-spacing: -5px;
-            margin-bottom: 28px;
-        }
-
-        h1 span {
-            background: linear-gradient(
-                90deg,
-                var(--accent),
-                var(--accent-2)
-            );
-
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hero-description {
-            max-width: 720px;
-
-            color: var(--muted);
-
-            font-size: 1.15rem;
-            line-height: 1.8;
-
-            margin-bottom: 35px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 13px 20px;
-
-            border-radius: 10px;
-
-            font-weight: 700;
-            font-size: 0.92rem;
-
-            border: 1px solid var(--line);
-
-            transition: 0.25s;
-        }
-
-        .btn-primary {
-            background: var(--white);
-            color: #09090b;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.05);
-        }
-
-        /* SECTIONS */
-
-        section {
-            padding: 100px 0;
-        }
-
-        .section-label {
-            color: var(--accent);
-            font-size: 0.82rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 12px;
-        }
-
-        h2 {
-            font-size: clamp(2rem, 4vw, 3.4rem);
-            letter-spacing: -2px;
-            margin-bottom: 20px;
-        }
-
-        .section-intro {
-            max-width: 700px;
-            color: var(--muted);
-            margin-bottom: 45px;
-        }
-
-        /* ABOUT */
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 25px;
-        }
-
-        .about-card,
-        .focus-card {
-            background: var(--card);
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            padding: 32px;
-        }
-
-        .about-card p {
-            color: var(--muted);
-            font-size: 1rem;
-            margin-bottom: 18px;
-        }
-
-        .focus-list {
-            list-style: none;
-        }
-
-        .focus-list li {
-            padding: 14px 0;
-            border-bottom: 1px solid var(--line);
-            color: var(--muted);
-        }
-
-        .focus-list li:last-child {
-            border-bottom: none;
-        }
-
-        .focus-list strong {
-            color: var(--text);
-        }
-
-        /* PROJECTS */
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .project {
-            background: var(--card);
-            border: 1px solid var(--line);
-            border-radius: 18px;
-
-            padding: 30px;
-
-            transition:
-                transform 0.25s,
-                border-color 0.25s,
-                background 0.25s;
-        }
-
-        .project:hover {
-            transform: translateY(-5px);
-            background: var(--card-hover);
-            border-color: #3a3a4b;
-        }
-
-        .project-number {
-            color: var(--accent);
-            font-size: 0.8rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            margin-bottom: 18px;
-        }
-
-        .project h3 {
-            font-size: 1.35rem;
-            margin-bottom: 12px;
-        }
-
-        .project p {
-            color: var(--muted);
-            font-size: 0.94rem;
-            margin-bottom: 20px;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 7px;
-        }
-
-        .tag {
-            padding: 6px 9px;
-
-            border-radius: 7px;
-
-            background: rgba(255,255,255,0.045);
-            border: 1px solid var(--line);
-
-            color: #c7c7d2;
-
-            font-size: 0.75rem;
-        }
-
-        .project-link {
-            display: inline-block;
-
-            margin-top: 20px;
-
-            color: var(--white);
-            font-size: 0.85rem;
-            font-weight: 700;
-        }
-
-        .project-link:hover {
-            color: var(--accent-2);
-        }
-
-        /* SKILLS */
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-        }
-
-        .skill-card {
-            background: var(--card);
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            padding: 25px;
-        }
-
-        .skill-card h3 {
-            margin-bottom: 15px;
-            font-size: 1rem;
-        }
-
-        .skill-card p {
-            color: var(--muted);
-            line-height: 1.9;
-            font-size: 0.9rem;
-        }
-
-        /* EXPERIENCE */
-
-        .timeline {
-            display: grid;
-            gap: 18px;
-            max-width: 850px;
-        }
-
-        .timeline-item {
-            border-left: 2px solid var(--accent);
-            padding: 5px 0 5px 25px;
-        }
-
-        .timeline-item h3 {
-            font-size: 1.15rem;
-            margin-bottom: 4px;
-        }
-
-        .timeline-item .company {
-            color: var(--accent-2);
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-        }
-
-        .timeline-item p {
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-
-        /* EDUCATION */
-
-        .education {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .education-card {
-            background: var(--card);
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            padding: 25px;
-        }
-
-        .education-card h3 {
-            margin-bottom: 7px;
-        }
-
-        .education-card p {
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-
-        /* CONTACT */
-
-        .contact {
-            text-align: center;
-
-            padding: 90px 30px;
-
-            border: 1px solid var(--line);
-            border-radius: 24px;
-
-            background:
-                radial-gradient(
-                    circle at 50% 0%,
-                    rgba(139, 92, 246, 0.13),
-                    transparent 50%
-                ),
-                var(--card);
-        }
-
-        .contact p {
-            max-width: 600px;
-            margin: 0 auto 28px;
-
-            color: var(--muted);
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .contact-links a {
-            padding: 11px 16px;
-
-            border: 1px solid var(--line);
-            border-radius: 9px;
-
-            color: var(--muted);
-
-            transition: 0.25s;
-        }
-
-        .contact-links a:hover {
-            color: var(--white);
-            border-color: #444455;
-        }
-
-        /* FOOTER */
-
-        footer {
-            padding: 45px 0;
-
-            color: #777783;
-
-            font-size: 0.82rem;
-
-            text-align: center;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 800px) {
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                min-height: auto;
-                padding: 100px 0 80px;
-            }
-
-            h1 {
-                letter-spacing: -3px;
-            }
-
-            .about-grid,
-            .projects,
-            .skills-grid,
-            .education {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 75px 0;
-            }
-
-            .hero-description {
-                font-size: 1rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anuja Gaikwad — Python Developer · AWS · AI · Automation</title>
+<meta name="description" content="Portfolio of Anuja Gaikwad, a Python developer building AWS-based applications, AI-powered automation, backend APIs and practical Generative AI systems.">
+<meta property="og:title" content="Anuja Gaikwad — Python Developer · AWS · AI · Automation">
+<meta property="og:description" content="Python, AWS, AI, Generative AI, automation and cloud application projects.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%230D1B2A%22/><text x=%2250%22 y=%2266%22 font-size=%2258%22 text-anchor=%22middle%22 fill=%22%23778DA9%22 font-family=%22Georgia%22>AG</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0D1B2A;
+    --bg-deep:#091420;
+    --card:#1B263B;
+    --card-hi:#22314a;
+    --accent:#778DA9;
+    --accent-soft:rgba(119,141,169,.16);
+    --accent-glow:rgba(119,141,169,.35);
+    --text:#E0E1DD;
+    --muted:#9DA9BD;
+    --border:rgba(224,225,221,.10);
+    --border-hi:rgba(119,141,169,.45);
+    --radius:16px;
+    --display:'Space Grotesk',sans-serif;
+    --body:'Inter',sans-serif;
+    --mono:'JetBrains Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}}
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--body);
+    line-height:1.6;
+    overflow-x:hidden;
+    position:relative;
+  }
+  a{color:inherit}
+  ::selection{background:var(--accent-glow);color:#fff}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:flex;align-items:center;gap:10px;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--accent)}
+  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.01em}
+  h2{font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:8px}
+  .section-sub{color:var(--muted);margin-bottom:44px;max-width:560px}
+  section{padding:110px 0;position:relative}
+  @media(max-width:720px){section{padding:76px 0}}
+
+  /* mouse glow */
+  #cursor-glow{
+    position:fixed;top:0;left:0;width:420px;height:420px;
+    border-radius:50%;pointer-events:none;z-index:1;
+    background:radial-gradient(circle,var(--accent-glow) 0%,transparent 70%);
+    opacity:0;transition:opacity .4s ease;
+    transform:translate(-50%,-50%);
+    mix-blend-mode:screen;
+  }
+  @media(max-width:900px){#cursor-glow{display:none}}
+
+  /* floating particles */
+  #particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+  .particle{position:absolute;border-radius:50%;background:var(--accent);opacity:.25;animation:floatUp linear infinite}
+  @keyframes floatUp{
+    0%{transform:translateY(0) translateX(0);opacity:0}
+    10%{opacity:.35}
+    90%{opacity:.2}
+    100%{transform:translateY(-100vh) translateX(20px);opacity:0}
+  }
+
+  /* progress bar */
+  #scrollbar{position:fixed;top:0;left:0;height:2px;width:0%;background:var(--accent);z-index:999;transition:width .1s linear}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:900;background:rgba(9,20,32,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+  .nav-inner{max-width:1140px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
+  .nav-logo{font-family:var(--mono);font-size:.95rem;color:var(--text);letter-spacing:.02em}
+  .nav-logo span{color:var(--accent)}
+  .nav-links{display:flex;gap:30px;list-style:none}
+  .nav-links a{font-size:.85rem;color:var(--muted);text-decoration:none;font-weight:500;transition:color .2s;position:relative;padding-bottom:3px}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--accent);transition:width .25s ease}
+  .nav-links a:hover{color:var(--text)}
+  .nav-links a.active{color:var(--text)}
+  .nav-links a.active::after{width:100%}
+  .nav-toggle{display:none;background:none;border:1px solid var(--border);color:var(--text);width:38px;height:38px;border-radius:8px;font-size:1.1rem;cursor:pointer}
+  @media(max-width:760px){
+    .nav-links{position:fixed;top:63px;left:0;right:0;background:var(--bg-deep);flex-direction:column;padding:20px 24px;gap:18px;border-bottom:1px solid var(--border);transform:translateY(-140%);transition:transform .3s ease;}
+    .nav-links.open{transform:translateY(0)}
+    .nav-toggle{display:block}
+  }
+
+  /* hero */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;padding-top:60px;overflow:hidden}
+  #hero-net{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none}
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr;gap:20px}
+  .hero-kicker{font-family:var(--mono);color:var(--accent);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px;opacity:0;animation:fadeUp .7s .1s ease forwards}
+  .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.05;opacity:0;animation:fadeUp .7s .25s ease forwards}
+  .hero-role{font-family:var(--mono);font-size:clamp(1.05rem,2.2vw,1.4rem);color:var(--accent);margin-top:18px;min-height:1.6em;opacity:0;animation:fadeUp .7s .4s ease forwards}
+  .hero-role .cursor{display:inline-block;width:2px;background:var(--accent);margin-left:2px;animation:blink 1s steps(1) infinite}
+  .hero-desc{max-width:560px;color:var(--muted);margin-top:22px;font-size:1.05rem;opacity:0;animation:fadeUp .7s .55s ease forwards}
+  .hero-cta{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;opacity:0;animation:fadeUp .7s .7s ease forwards}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes blink{50%{opacity:0}}
+
+  .btn{
+    font-family:var(--body);font-weight:600;font-size:.92rem;
+    padding:13px 28px;border-radius:999px;text-decoration:none;
+    display:inline-flex;align-items:center;gap:8px;
+    border:1px solid transparent;cursor:pointer;transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .btn-primary{background:var(--text);color:var(--bg-deep)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(224,225,221,.15)}
+  .btn-ghost{border-color:var(--border-hi);color:var(--text);background:transparent}
+  .btn-ghost:hover{background:var(--accent-soft);transform:translateY(-2px)}
+
+  /* cards generic */
+  .card{
+    position:relative;
+    background:linear-gradient(180deg,var(--card),var(--card-hi));
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:28px;
+    transition:transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+  }
+  .card::after{
+    content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;
+    background:linear-gradient(135deg,var(--accent-glow),transparent 60%);
+    opacity:0;transition:opacity .35s ease;pointer-events:none;
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude;
+  }
+  .card:hover{transform:translateY(-5px);border-color:var(--border-hi);box-shadow:0 20px 44px rgba(0,0,0,.35)}
+  .card:hover::after{opacity:1}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:start}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr}}
+  .about-lines{display:flex;flex-direction:column;gap:14px}
+  .about-lines p{color:var(--muted);font-size:1.02rem}
+  .about-lines strong{color:var(--text);font-weight:600}
+  .focus-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .focus-list li{display:flex;align-items:baseline;gap:12px;font-size:.95rem;color:var(--muted);padding-bottom:12px;border-bottom:1px solid var(--border)}
+  .focus-list li span.tag{font-family:var(--mono);font-size:.7rem;color:var(--accent);min-width:64px}
+
+  /* projects */
+  .proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px}
+  .proj-card{display:flex;flex-direction:column;gap:14px}
+  .proj-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .proj-num{font-family:var(--mono);font-size:.72rem;color:var(--accent);letter-spacing:.06em}
+  .proj-top h3{font-size:1.12rem;margin-top:4px}
+  .proj-tag{font-family:var(--mono);font-size:.65rem;color:var(--accent);border:1px solid var(--border-hi);padding:3px 9px;border-radius:99px;white-space:nowrap}
+  .proj-card p{color:var(--muted);font-size:.92rem}
+  .proj-result{font-family:var(--mono);font-size:.76rem;color:var(--text);background:var(--accent-soft);border:1px dashed var(--border-hi);padding:8px 12px;border-radius:8px}
+  .proj-feats{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:2px}
+  .proj-feats li{font-size:.85rem;color:var(--muted);padding-left:20px;position:relative}
+  .proj-feats li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:600}
+  .stack-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:8px}
+  .stack-row span{font-family:var(--mono);font-size:.68rem;background:rgba(224,225,221,.06);color:var(--muted);padding:4px 9px;border-radius:6px}
+  .proj-link{font-family:var(--mono);font-size:.78rem;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-top:4px;padding-top:10px;border-top:1px solid var(--border)}
+  .proj-link:hover{color:var(--text)}
+  .proj-link::after{content:"→";transition:transform .2s ease}
+  .proj-link:hover::after{transform:translateX(3px)}
+
+  /* skills */
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+  .skill-cat h4{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+  .skill-cat .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .skill-cat .tags span{font-size:.82rem;padding:6px 13px;border-radius:99px;background:rgba(224,225,221,.06);border:1px solid var(--border)}
+
+  /* experience */
+  .exp-list{display:flex;flex-direction:column;gap:20px}
+  .exp-item{padding:26px 28px}
+  .exp-top{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+  .exp-top h3{font-size:1.05rem}
+  .exp-org{color:var(--accent);font-size:.88rem;font-family:var(--mono)}
+  .exp-date{font-family:var(--mono);font-size:.75rem;color:var(--muted);white-space:nowrap}
+  .exp-list ul{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:6px}
+  .exp-list ul li{font-size:.88rem;color:var(--muted);padding-left:16px;position:relative}
+  .exp-list ul li::before{content:"—";position:absolute;left:0;color:var(--accent)}
+
+  /* education */
+  .edu-item{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--border)}
+  .edu-item:last-child{border-bottom:none}
+  .edu-year{font-family:var(--mono);color:var(--accent);font-size:.85rem}
+  .edu-item h3{font-size:1.02rem;margin-bottom:4px}
+  .edu-item p{color:var(--muted);font-size:.88rem}
+  @media(max-width:560px){.edu-item{grid-template-columns:1fr;gap:6px}}
+
+  /* certs */
+  .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+  .cert-card{display:flex;gap:14px;align-items:center;padding:22px}
+  .cert-icon{font-family:var(--mono);font-size:.66rem;color:var(--bg);background:var(--accent);width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700}
+  .cert-card h4{font-size:.9rem;line-height:1.35}
+  .cert-card .cert-sub{font-size:.76rem;color:var(--muted);margin-top:3px;font-family:var(--mono)}
+
+  /* contact */
+  .contact-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+  .ccard{display:flex;align-items:center;gap:14px;padding:22px 20px;text-decoration:none}
+  .ccard .ic{font-family:var(--mono);color:var(--accent);font-size:1rem;width:38px;height:38px;border:1px solid var(--border-hi);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .ccard .lbl{font-size:.7rem;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em}
+  .ccard .val{font-size:.92rem;color:var(--text)}
+
+  footer{padding:44px 0 36px;border-top:1px solid var(--border);text-align:center;position:relative}
+  footer p{color:var(--muted);font-size:.85rem}
+  footer .tag{font-family:var(--mono);color:var(--accent);font-size:.78rem;margin-top:8px}
+</style>
 </head>
-
 <body>
 
-<!-- NAVIGATION -->
+<div id="particles"></div>
+<div id="cursor-glow"></div>
+<div id="scrollbar"></div>
 
 <nav>
-    <div class="container nav-inner">
-
-        <a href="#" class="logo">
-            Anuja<span>.</span>
-        </a>
-
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-
-    </div>
+  <div class="nav-inner">
+    <div class="nav-logo">anuja<span>.dev</span></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Learning</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 </nav>
 
-
-<!-- HERO -->
-
 <header class="hero">
-
-    <div class="container">
-
-        <div class="hero-content">
-
-            <div class="eyebrow">
-                <span class="status-dot"></span>
-                Python Developer · AWS · AI · Automation
-            </div>
-
-            <h1>
-                I build
-                <span>Python-powered</span>
-                cloud & AI systems.
-            </h1>
-
-            <p class="hero-description">
-                I'm Anuja Gaikwad, a Python developer focused on
-                AWS, Generative AI, automation, backend APIs, and
-                cloud applications. I build practical systems that
-                move from an idea to a working, deployable solution.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a
-                    href="#projects"
-                    class="btn btn-primary"
-                >
-                    View Projects
-                </a>
-
-                <a
-                    href="https://github.com/AnujaGaikwad"
-                    target="_blank"
-                    class="btn btn-secondary"
-                >
-                    GitHub
-                </a>
-
-                <a
-                    href="https://www.linkedin.com/in/er-anuja-gaikwad/"
-                    target="_blank"
-                    class="btn btn-secondary"
-                >
-                    LinkedIn
-                </a>
-
-            </div>
-
-        </div>
-
+  <svg id="hero-net"></svg>
+  <div class="wrap hero-grid">
+    <div class="hero-kicker">B.Tech · Electronics &amp; Computer Engineering · Class of 2026</div>
+    <h1>Anuja Gaikwad</h1>
+    <div class="hero-role">I build with <span id="typed"></span><span class="cursor">&nbsp;</span></div>
+    <p class="hero-desc">
+      Python developer building AWS-based applications, AI-powered automation,
+      backend APIs, and practical Generative AI systems.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
     </div>
-
+  </div>
 </header>
 
-
-<!-- ABOUT -->
-
 <section id="about">
-
-    <div class="container">
-
-        <div class="section-label">01 / About</div>
-
-        <h2>Building systems, not just demos.</h2>
-
-        <p class="section-intro">
-            My work combines Python development, AWS cloud services,
-            AI/GenAI, automation, and backend engineering.
-        </p>
-
-        <div class="about-grid">
-
-            <div class="about-card">
-
-                <p>
-                    I enjoy building applications where different
-                    technologies work together to solve practical
-                    problems.
-                </p>
-
-                <p>
-                    My projects include serverless AWS applications,
-                    AI-powered investigation systems, automated cloud
-                    workflows, containerized applications, and machine
-                    learning solutions.
-                </p>
-
-                <p>
-                    I am particularly interested in the intersection
-                    of <strong>Python + Cloud + AI + Automation</strong>.
-                </p>
-
-            </div>
-
-            <div class="focus-card">
-
-                <ul class="focus-list">
-
-                    <li>
-                        🐍 <strong>Python Development</strong>
-                    </li>
-
-                    <li>
-                        ☁️ <strong>AWS & Cloud Applications</strong>
-                    </li>
-
-                    <li>
-                        🤖 <strong>AI & Generative AI</strong>
-                    </li>
-
-                    <li>
-                        ⚙️ <strong>Automation & APIs</strong>
-                    </li>
-
-                    <li>
-                        🐳 <strong>Docker & Cloud Deployment</strong>
-                    </li>
-
-                    <li>
-                        📊 <strong>Data & Analytics</strong>
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <div class="eyebrow">About</div>
+      <h2>Python developer with a cloud + AI mindset</h2>
+      <div class="about-lines">
+        <p>B.Tech student in <strong>Electronics &amp; Computer Engineering</strong>, Class of 2026.</p>
+        <p>I build practical systems with <strong>Python, AWS, AI/ML, Generative AI and automation</strong>.</p>
+        <p>My projects focus on taking ideas beyond a local script: connecting APIs, cloud services, databases, AI models, automation workflows and deployment into working applications.</p>
+        <p>Currently focused on <strong>Python Developer, AWS/Cloud, AI/ML and AI Automation</strong> opportunities.</p>
+      </div>
     </div>
-
+    <div class="reveal">
+      <ul class="focus-list">
+        <li><span class="tag">CORE</span> Python, SQL, REST APIs &amp; backend development</li>
+        <li><span class="tag">CLOUD</span> AWS Lambda, S3, API Gateway, DynamoDB, EC2 &amp; CloudWatch</li>
+        <li><span class="tag">AI</span> Gemini, GenAI, ML, CNN, NLP &amp; computer vision</li>
+        <li><span class="tag">SHIP</span> Docker, ECS/Fargate, Kubernetes &amp; GitHub Actions</li>
+        <li><span class="tag">LEARN</span> Google Cloud / Google Skills GenAI labs &amp; badges</li>
+      </ul>
+    </div>
+  </div>
 </section>
-
-
-<!-- PROJECTS -->
 
 <section id="projects">
-
-    <div class="container">
-
-        <div class="section-label">02 / Selected Work</div>
-
-        <h2>Projects I've built.</h2>
-
-        <p class="section-intro">
-            A selection of projects covering AI, AWS, automation,
-            backend development, DevOps, and machine learning.
-        </p>
-
-        <div class="projects">
-
-
-            <!-- PROJECT 1 -->
-
-            <article class="project">
-
-                <div class="project-number">01</div>
-
-                <h3>🔎 AI Detective</h3>
-
-                <p>
-                    AI-powered evidence investigation system that
-                    combines multimodal Gemini analysis with AWS
-                    services to analyze uploaded evidence, generate
-                    investigation reports, and identify major clues.
-                </p>
-
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">AWS Lambda</span>
-                    <span class="tag">S3</span>
-                    <span class="tag">API Gateway</span>
-                    <span class="tag">DynamoDB</span>
-                    <span class="tag">Rekognition</span>
-                    <span class="tag">Gemini</span>
-                    <span class="tag">Polly</span>
-                    <span class="tag">SNS</span>
-                </div>
-
-                <a
-                    href="https://github.com/AnujaGaikwad/ai-detective"
-                    target="_blank"
-                    class="project-link"
-                >
-                    View on GitHub →
-                </a>
-
-            </article>
-
-
-            <!-- PROJECT 2 -->
-
-            <article class="project">
-
-                <div class="project-number">02</div>
-
-                <h3>☁️ CloudOps Rescue Center</h3>
-
-                <p>
-                    Containerized cloud incident management platform
-                    demonstrating Docker, AWS ECR, ECS Fargate and
-                    Kubernetes deployment with scaling, self-healing,
-                    rolling updates, and rollback.
-                </p>
-
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Flask</span>
-                    <span class="tag">Docker</span>
-                    <span class="tag">Docker Compose</span>
-                    <span class="tag">ECR</span>
-                    <span class="tag">ECS Fargate</span>
-                    <span class="tag">Kubernetes</span>
-                    <span class="tag">CloudWatch</span>
-                </div>
-
-                <a
-                    href="https://github.com/AnujaGaikwad/cloudops-incident-api"
-                    target="_blank"
-                    class="project-link"
-                >
-                    View on GitHub →
-                </a>
-
-            </article>
-
-
-            <!-- PROJECT 3 -->
-
-            <article class="project">
-
-                <div class="project-number">03</div>
-
-                <h3>💰 Automated AWS Cost Optimizer</h3>
-
-                <p>
-                    Automated EC2 management system using Lambda and
-                    EventBridge Scheduler to start and stop development
-                    instances based on tags and scheduled workflows.
-                </p>
-
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Boto3</span>
-                    <span class="tag">Lambda</span>
-                    <span class="tag">EC2</span>
-                    <span class="tag">EventBridge</span>
-                    <span class="tag">IAM</span>
-                    <span class="tag">CloudWatch</span>
-                </div>
-
-                <a
-                    href="https://github.com/AnujaGaikwad/automated-aws-cost-optimizer"
-                    target="_blank"
-                    class="project-link"
-                >
-                    View on GitHub →
-                </a>
-
-            </article>
-
-
-            <!-- PROJECT 4 -->
-
-            <article class="project">
-
-                <div class="project-number">04</div>
-
-                <h3>💳 SmartExpenseTracker</h3>
-
-                <p>
-                    Full-stack serverless expense management system
-                    with CRUD operations, spending analytics, budgets,
-                    category breakdowns, and automated AWS deployment.
-                </p>
-
-                <div class="tags">
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">API Gateway</span>
-                    <span class="tag">Lambda</span>
-                    <span class="tag">DynamoDB</span>
-                    <span class="tag">S3</span>
-                    <span class="tag">GitHub Actions</span>
-                    <span class="tag">AWS OIDC</span>
-                </div>
-
-                <a
-                    href="https://github.com/AnujaGaikwad/SmartExpenseTracker"
-                    target="_blank"
-                    class="project-link"
-                >
-                    View on GitHub →
-                </a>
-
-            </article>
-
-
-            <!-- PROJECT 5 -->
-
-            <article class="project">
-
-                <div class="project-number">05</div>
-
-                <h3>🧑‍💻 AI Developer Assistant</h3>
-
-                <p>
-                    Command-line AI assistant for Python codebases that
-                    helps explain code, debug issues, generate
-                    documentation, and create pytest test cases.
-                </p>
-
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Gemini</span>
-                    <span class="tag">Groq</span>
-                    <span class="tag">CLI</span>
-                    <span class="tag">Rich</span>
-                </div>
-
-                <a
-                    href="https://github.com/AnujaGaikwad/AI_Dev_Assistant"
-                    target="_blank"
-                    class="project-link"
-                >
-                    View on GitHub →
-                </a>
-
-            </article>
-
-
-            <!-- PROJECT 6 -->
-
-            <article class="project">
-
-                <div class="project-number">06</div>
-
-                <h3>🌸 Flower Recognition CNN</h3>
-
-                <p>
-                    Deep-learning image classification system using
-                    preprocessing, augmentation, CNN architecture and
-                    Streamlit-based inference.
-                </p>
-
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">TensorFlow</span>
-                    <span class="tag">Keras</span>
-                    <span class="tag">CNN</span>
-                    <span class="tag">OpenCV</span>
-                    <span class="tag">Streamlit</span>
-                </div>
-
-                <a
-                    href="https://github.com/AnujaGaikwad/flower-recognition-cnn"
-                    target="_blank"
-                    class="project-link"
-                >
-                    View on GitHub →
-                </a>
-
-            </article>
-
-
-            <!-- PROJECT 7 -->
-
-            <article class="project">
-
-                <div class="project-number">07</div>
-
-                <h3>📊 Movie Ratings Analysis</h3>
-
-                <p>
-                    End-to-end data analytics project covering data
-                    cleaning, exploratory analysis, visualization,
-                    dashboard development, and business insights.
-                </p>
-
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Pandas</span>
-                    <span class="tag">NumPy</span>
-                    <span class="tag">Matplotlib</span>
-                    <span class="tag">Seaborn</span>
-                    <span class="tag">Plotly</span>
-                    <span class="tag">Streamlit</span>
-                </div>
-
-                <a
-                    href="https://github.com/AnujaGaikwad/movie-data-analysis"
-                    target="_blank"
-                    class="project-link"
-                >
-                    View on GitHub →
-                </a>
-
-            </article>
-
-
-            <!-- PROJECT 8 -->
-
-            <article class="project">
-
-                <div class="project-number">08</div>
-
-                <h3>🎙️ JARVIS AI Desktop Assistant</h3>
-
-                <p>
-                    Voice-based desktop assistant using Gemini,
-                    multithreading and Windows automation to execute
-                    commands and interact with the desktop.
-                </p>
-
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Gemini</span>
-                    <span class="tag">Voice AI</span>
-                    <span class="tag">Automation</span>
-                    <span class="tag">Multithreading</span>
-                </div>
-
-                <a
-                    href="https://github.com/AnujaGaikwad/jarvis-ai-desktop-assistant"
-                    target="_blank"
-                    class="project-link"
-                >
-                    View on GitHub →
-                </a>
-
-            </article>
-
-
-            <!-- PROJECT 9 -->
-
-            <article class="project">
-
-                <div class="project-number">09</div>
-
-                <h3>💬 WhatsApp AI Auto-Reply Bot</h3>
-
-                <p>
-                    Automated WhatsApp response system combining
-                    rule-based NLP with Gemini to process incoming
-                    messages and generate contextual replies.
-                </p>
-
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Gemini</span>
-                    <span class="tag">NLP</span>
-                    <span class="tag">TextBlob</span>
-                    <span class="tag">Automation</span>
-                </div>
-
-                <a
-                    href="https://github.com/AnujaGaikwad/AUTO-REPLY-AI-CHATBOT-WhatsApp-Automation-"
-                    target="_blank"
-                    class="project-link"
-                >
-                    View on GitHub →
-                </a>
-
-            </article>
-
-
-            <!-- PROJECT 10 -->
-
-            <article class="project">
-
-                <div class="project-number">10</div>
-
-                <h3>🏙️ CivicLens</h3>
-
-                <p>
-                    Photo-based civic complaint platform using image
-                    analysis and serverless AWS services to categorize
-                    complaints and manage reports.
-                </p>
-
-                <div class="tags">
-                    <span class="tag">AWS Lambda</span>
-                    <span class="tag">S3</span>
-                    <span class="tag">Rekognition</span>
-                    <span class="tag">DynamoDB</span>
-                    <span class="tag">API Gateway</span>
-                    <span class="tag">SNS</span>
-                    <span class="tag">Polly</span>
-                </div>
-
-                <a
-                    href="https://github.com/AnujaGaikwad/CivicLens"
-                    target="_blank"
-                    class="project-link"
-                >
-                    View on GitHub →
-                </a>
-
-            </article>
-
-        </div>
-
-    </div>
-
+  <div class="wrap">
+    <div class="eyebrow reveal">Featured Projects</div>
+    <h2 class="reveal">Systems I've actually built</h2>
+    <p class="section-sub reveal">A focused selection of cloud, AI, automation and machine-learning projects rather than a museum of every tutorial ever opened.</p>
+    <div class="proj-grid" id="projGrid"></div>
+  </div>
 </section>
-
-
-<!-- SKILLS -->
 
 <section id="skills">
-
-    <div class="container">
-
-        <div class="section-label">03 / Technical Skills</div>
-
-        <h2>Tools I work with.</h2>
-
-        <p class="section-intro">
-            A practical stack centered around Python, AWS, AI,
-            automation, backend development, and deployment.
-        </p>
-
-        <div class="skills-grid">
-
-            <div class="skill-card">
-
-                <h3>🐍 Programming & Backend</h3>
-
-                <p>
-                    Python · SQL · JavaScript · HTML · CSS · Flask ·
-                    REST APIs · Boto3
-                </p>
-
-            </div>
-
-            <div class="skill-card">
-
-                <h3>☁️ AWS & Cloud</h3>
-
-                <p>
-                    Lambda · EC2 · S3 · API Gateway · DynamoDB · RDS ·
-                    CloudFront · CloudWatch · EventBridge · SNS · IAM ·
-                    Rekognition · Polly · ECR · ECS Fargate · ALB · ASG
-                </p>
-
-            </div>
-
-            <div class="skill-card">
-
-                <h3>🤖 AI / ML / GenAI</h3>
-
-                <p>
-                    Machine Learning · Deep Learning · TensorFlow ·
-                    Keras · CNN · OpenCV · NLP · Gemini API ·
-                    Generative AI · LLM APIs
-                </p>
-
-            </div>
-
-            <div class="skill-card">
-
-                <h3>🐳 DevOps & Deployment</h3>
-
-                <p>
-                    Docker · Docker Compose · Kubernetes · ECR ·
-                    ECS Fargate · GitHub Actions · AWS OIDC ·
-                    Git · GitHub
-                </p>
-
-            </div>
-
-            <div class="skill-card">
-
-                <h3>📊 Data & Analytics</h3>
-
-                <p>
-                    Pandas · NumPy · Matplotlib · Seaborn · Plotly ·
-                    EDA · Statistics · Power BI · Excel · Streamlit
-                </p>
-
-            </div>
-
-            <div class="skill-card">
-
-                <h3>🧰 Development Tools</h3>
-
-                <p>
-                    VS Code · Jupyter · AWS Console · GitHub ·
-                    Gemini · Groq · Streamlit
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
+  <div class="wrap">
+    <div class="eyebrow reveal">Skills</div>
+    <h2 class="reveal">Technical toolbox</h2>
+    <p class="section-sub reveal">Focused on the technologies that appear repeatedly across my projects and learning.</p>
+    <div class="skills-grid" id="skillsGrid"></div>
+  </div>
 </section>
-
-
-<!-- EXPERIENCE -->
 
 <section id="experience">
-
-    <div class="container">
-
-        <div class="section-label">04 / Experience</div>
-
-        <h2>Experience & learning.</h2>
-
-        <p class="section-intro">
-            Practical experience gained through internships,
-            job simulations, technical training, and hands-on projects.
-        </p>
-
-        <div class="timeline">
-
-            <div class="timeline-item">
-
-                <h3>Data Analytics Job Simulation</h3>
-
-                <div class="company">
-                    Deloitte · Forage · 2026
-                </div>
-
-                <p>
-                    Completed practical data analytics tasks involving
-                    business-focused analysis and data-driven problem
-                    solving.
-                </p>
-
-            </div>
-
-
-            <div class="timeline-item">
-
-                <h3>Web Development Internship</h3>
-
-                <div class="company">
-                    Owntap Consultancy Services · 2023
-                </div>
-
-                <p>
-                    Gained practical experience in web development
-                    and application implementation.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
+  <div class="wrap">
+    <div class="eyebrow reveal">Experience</div>
+    <h2 class="reveal">Experience &amp; practical work</h2>
+    <p class="section-sub reveal">Hands-on development experience plus structured industry simulations.</p>
+    <div class="exp-list" id="expList"></div>
+  </div>
 </section>
 
-
-<!-- EDUCATION -->
-
-<section>
-
-    <div class="container">
-
-        <div class="section-label">05 / Education</div>
-
-        <h2>Education.</h2>
-
-        <div class="education">
-
-            <div class="education-card">
-
-                <h3>B.Tech — Electronics & Computer Engineering</h3>
-
-                <p>
-                    Dr. Babasaheb Ambedkar Technological University
-                </p>
-
-                <p>
-                    Expected Graduation: November 2026
-                </p>
-
-            </div>
-
-            <div class="education-card">
-
-                <h3>Diploma — Computer Technology</h3>
-
-                <p>
-                    Government Polytechnic, Beed
-                </p>
-
-                <p>
-                    2020 – 2023
-                </p>
-
-            </div>
-
+<section id="education">
+  <div class="wrap">
+    <div class="eyebrow reveal">Education</div>
+    <h2 class="reveal">Academic background</h2>
+    <div class="reveal card" style="padding:6px 28px">
+      <div class="edu-item">
+        <div class="edu-year">2023–2026</div>
+        <div>
+          <h3>B.Tech — Electronics &amp; Computer Engineering</h3>
+          <p>M.B.E.S. College of Engineering, Ambajogai · Dr. Babasaheb Ambedkar Technological University (DBATU) · Expected 2026</p>
         </div>
-
+      </div>
+      <div class="edu-item">
+        <div class="edu-year">2020–2023</div>
+        <div>
+          <h3>Diploma — Computer Technology</h3>
+          <p>Government Polytechnic, Beed</p>
+        </div>
+      </div>
     </div>
-
+  </div>
 </section>
 
-
-<!-- CONTACT -->
+<section id="certifications">
+  <div class="wrap">
+    <div class="eyebrow reveal">Learning &amp; Credentials</div>
+    <h2 class="reveal">Continuous learning</h2>
+    <p class="section-sub reveal">AWS, Generative AI and Google Cloud learning completed alongside project work.</p>
+    <div class="cert-grid" id="certGrid"></div>
+  </div>
+</section>
 
 <section id="contact">
-
-    <div class="container">
-
-        <div class="contact">
-
-            <div class="section-label">
-                06 / Contact
-            </div>
-
-            <h2>Let's build something useful.</h2>
-
-            <p>
-                I'm interested in opportunities involving Python,
-                AWS, AI, automation, backend development, and
-                cloud-based applications.
-            </p>
-
-            <div class="contact-links">
-
-                <a href="mailto:anujag2020@gmail.com">
-                    Email
-                </a>
-
-                <a
-                    href="https://www.linkedin.com/in/er-anuja-gaikwad/"
-                    target="_blank"
-                >
-                    LinkedIn
-                </a>
-
-                <a
-                    href="https://github.com/AnujaGaikwad"
-                    target="_blank"
-                >
-                    GitHub
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
+  <div class="wrap">
+    <div class="eyebrow reveal">Contact</div>
+    <h2 class="reveal">Let's connect</h2>
+    <p class="section-sub reveal">Open to entry-level Python Developer, AWS/Cloud, AI/ML and AI Automation opportunities.</p>
+    <div class="contact-cards" id="contactCards"></div>
+  </div>
 </section>
 
-
-<!-- FOOTER -->
-
 <footer>
-
-    <div class="container">
-
-        © 2026 Anuja Gaikwad · Built with HTML & CSS
-
-    </div>
-
+  <div class="wrap">
+    <p>© 2026 Anuja Gaikwad</p>
+    <p class="tag">Python Developer • AWS • AI • Automation</p>
+  </div>
 </footer>
 
 
+<script>
+const projects = [
+  {
+    tag:"AWS + AI",
+    title:"AI Detective",
+    desc:"Serverless evidence investigation system combining AWS services with Gemini multimodal analysis to turn uploaded evidence into structured investigation insights.",
+    feats:[
+      "Analyzes up to five evidence images with multimodal AI",
+      "Uses S3, Lambda, API Gateway, Rekognition, DynamoDB and Polly",
+      "Generates investigation reports, confidence signals and audio output"
+    ],
+    stack:["Python","AWS Lambda","S3","API Gateway","Gemini","Rekognition","DynamoDB","Polly"],
+    link:"https://github.com/AnujaGaikwad/ai-detective"
+  },
+  {
+    tag:"Cloud + DevOps",
+    title:"CloudOps Rescue Center",
+    desc:"Containerized cloud incident-management platform taken from local Docker development to AWS ECS/Fargate and Kubernetes deployment.",
+    feats:[
+      "Built Flask-based incident API and supporting services",
+      "Containerized with Docker and Docker Compose",
+      "Deployed through ECR → ECS Fargate and Kubernetes with scaling and self-healing"
+    ],
+    stack:["Python","Flask","Docker","ECR","ECS Fargate","Kubernetes","CloudWatch"],
+    link:"https://github.com/AnujaGaikwad/cloudops-incident-api"
+  },
+  {
+    tag:"Serverless",
+    title:"SmartExpenseTracker",
+    desc:"Serverless expense tracking application with a web frontend, Python Lambda APIs, DynamoDB storage and automated CI/CD.",
+    feats:[
+      "Add, view, delete and analyze expenses through REST endpoints",
+      "Uses four Python Lambda functions with DynamoDB",
+      "GitHub Actions + AWS OIDC automates deployment without long-lived AWS keys"
+    ],
+    stack:["Python","JavaScript","Lambda","API Gateway","DynamoDB","S3","GitHub Actions"],
+    link:"https://github.com/AnujaGaikwad/SmartExpenseTracker"
+  },
+  {
+    tag:"AWS Automation",
+    title:"Automated AWS Cost Optimizer",
+    desc:"Scheduled EC2 cost-control workflow that starts and stops tagged development instances automatically using serverless AWS services.",
+    feats:[
+      "Uses Lambda + EventBridge Scheduler for automated actions",
+      "Controls only explicitly tagged development instances",
+      "CloudWatch logging and error monitoring provide operational visibility"
+    ],
+    stack:["Python","Lambda","EC2","EventBridge","CloudWatch","IAM"],
+    link:"https://github.com/AnujaGaikwad/automated-aws-cost-optimizer"
+  },
+  {
+    tag:"Machine Learning",
+    title:"Flower Recognition CNN",
+    desc:"End-to-end computer-vision project using a custom CNN to classify images across five flower species and serve predictions through Streamlit.",
+    feats:[
+      "Image preprocessing and data augmentation pipeline",
+      "CNN training and evaluation with TensorFlow/Keras",
+      "Interactive Streamlit interface for real-time image prediction"
+    ],
+    stack:["Python","TensorFlow","Keras","OpenCV","NumPy","Streamlit"]
+  }
+];
+
+const skillGroups = [
+  {cat:"Programming & Backend", items:["Python","SQL","REST APIs","Flask","Boto3","JavaScript","HTML","CSS"]},
+  {cat:"AWS & Cloud", items:["Lambda","S3","API Gateway","DynamoDB","EC2","RDS","CloudWatch","SNS","IAM","EventBridge","ECR","ECS/Fargate","ALB","ASG"]},
+  {cat:"AI / ML / GenAI", items:["Gemini API","Google GenAI SDK","Vertex AI","Generative AI","Machine Learning","TensorFlow/Keras","CNN","OpenCV","NLP"]},
+  {cat:"DevOps & Deployment", items:["Docker","Docker Compose","Kubernetes","Git","GitHub","GitHub Actions","AWS OIDC","VS Code"]},
+  {cat:"Data & Python Libraries", items:["Pandas","NumPy","Matplotlib","Basic EDA","Streamlit","Excel"]},
+];
+
+const experience = [
+  {
+    title:"Web Development Intern",
+    org:"Owntap Consultancy Services, Beed",
+    date:"Jun – Aug 2023",
+    points:[
+      "Built responsive web pages using HTML, CSS and JavaScript for client-oriented projects",
+      "Implemented responsive layouts and basic front-end functionality",
+      "Worked on practical web-development tasks in a project environment"
+    ]
+  },
+  {
+    title:"Data Analytics Job Simulation",
+    org:"Deloitte via Forage",
+    date:"2026",
+    points:[
+      "Completed a structured industry simulation based on business and customer-data analysis",
+      "Worked with Tableau and Excel for analysis and visualization exercises",
+      "Practiced presenting findings in a stakeholder-oriented format"
+    ]
+  }
+];
+
+const certs = [
+  {ic:"AWS", title:"AWS with Python Training", sub:"Cloud development & Python"},
+  {ic:"G", title:"Google Cloud / Google Skills", sub:"GenAI learning badges & labs"},
+  {ic:"LLM", title:"Google Skills — Generative AI & LLM Learning", sub:"Generative AI · LLMs · Foundational concepts"},
+  {ic:"RA", title:"Google Skills — Responsible AI", sub:"Responsible AI learning"},
+  {ic:"SDK", title:"Google GenAI SDK Learning", sub:"Google Cloud / Vertex AI"},
+  {ic:"AI", title:"Generative AI Workshop", sub:"NxtWave"},
+  {ic:"GfG", title:"Data Analytics Training", sub:"GeeksforGeeks · 2026"},
+  {ic:"AI", title:"India AI Impact Buildathon", sub:"HCL GUVI · Participant"}
+];
+
+const contacts = [
+  {ic:"@", lbl:"Gmail", val:"anujag2020@gmail.com", href:"mailto:anujag2020@gmail.com"},
+  {ic:"in", lbl:"LinkedIn", val:"linkedin.com/in/er-anuja-gaikwad", href:"https://www.linkedin.com/in/er-anuja-gaikwad/"},
+  {ic:"&lt;/&gt;", lbl:"GitHub", val:"github.com/AnujaGaikwad", href:"https://github.com/AnujaGaikwad"},
+  {ic:"◎", lbl:"Location", val:"Pune, Maharashtra, India", href:null}
+];
+
+function el(html){
+  const t=document.createElement('template');
+  t.innerHTML=html.trim();
+  return t.content.firstElementChild;
+}
+
+const projGrid=document.getElementById('projGrid');
+projects.forEach((p,i)=>{
+  projGrid.appendChild(el(`
+    <div class="card proj-card reveal">
+      <div class="proj-top">
+        <div>
+          <div class="proj-num">${String(i+1).padStart(2,'0')}</div>
+          <h3>${p.title}</h3>
+        </div>
+        <span class="proj-tag">${p.tag}</span>
+      </div>
+      <p>${p.desc}</p>
+      <ul class="proj-feats">${p.feats.map(f=>`<li>${f}</li>`).join('')}</ul>
+      <div class="stack-row">${p.stack.map(s=>`<span>${s}</span>`).join('')}</div>
+      ${p.link ? `<a class="proj-link" href="${p.link}" target="_blank" rel="noopener">View on GitHub</a>` : ''}
+    </div>
+  `));
+});
+
+const skillsGrid=document.getElementById('skillsGrid');
+skillGroups.forEach(g=>{
+  skillsGrid.appendChild(el(`
+    <div class="card skill-cat reveal">
+      <h4>${g.cat}</h4>
+      <div class="tags">${g.items.map(i=>`<span>${i}</span>`).join('')}</div>
+    </div>
+  `));
+});
+
+const expList=document.getElementById('expList');
+experience.forEach(e=>{
+  expList.appendChild(el(`
+    <div class="card exp-item reveal">
+      <div class="exp-top">
+        <div>
+          <h3>${e.title}</h3>
+          <div class="exp-org">${e.org}</div>
+        </div>
+        <div class="exp-date">${e.date}</div>
+      </div>
+      <ul>${e.points.map(pt=>`<li>${pt}</li>`).join('')}</ul>
+    </div>
+  `));
+});
+
+const certGrid=document.getElementById('certGrid');
+certs.forEach(c=>{
+  certGrid.appendChild(el(`
+    <div class="card cert-card reveal">
+      <div class="cert-icon">${c.ic}</div>
+      <div><h4>${c.title}</h4><div class="cert-sub">${c.sub}</div></div>
+    </div>
+  `));
+});
+
+const contactCards=document.getElementById('contactCards');
+contacts.forEach(c=>{
+  const tag=c.href ? 'a' : 'div';
+  const hrefAttr=c.href ? `href="${c.href}" ${c.href.startsWith('http') ? 'target="_blank" rel="noopener"' : ''}` : '';
+  contactCards.appendChild(el(`
+    <${tag} class="ccard card reveal" ${hrefAttr}>
+      <div class="ic">${c.ic}</div>
+      <div><div class="lbl">${c.lbl}</div><div class="val">${c.val}</div></div>
+    </${tag}>
+  `));
+});
+
+/* typing */
+const roles=["Python","AWS","AI & Generative AI","Automation"];
+const typedEl=document.getElementById('typed');
+let ri=0,ci=0,deleting=false;
+function typeLoop(){
+  const word=roles[ri];
+  if(!deleting){
+    ci++;
+    typedEl.textContent=word.slice(0,ci);
+    if(ci===word.length){deleting=true;setTimeout(typeLoop,1300);return;}
+  }else{
+    ci--;
+    typedEl.textContent=word.slice(0,ci);
+    if(ci===0){deleting=false;ri=(ri+1)%roles.length;}
+  }
+  setTimeout(typeLoop,deleting?34:68);
+}
+typeLoop();
+
+/* scroll progress */
+const bar=document.getElementById('scrollbar');
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
+  bar.style.width=pct+'%';
+});
+
+/* mobile nav */
+const navToggle=document.getElementById('navToggle');
+const navLinks=document.getElementById('navLinks');
+navToggle.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+/* active nav */
+const navAnchors=Array.from(document.querySelectorAll('.nav-links a'));
+const sections=navAnchors.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const navObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      const id='#'+en.target.id;
+      navAnchors.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===id));
+    }
+  });
+},{rootMargin:'-40% 0px -50% 0px',threshold:0});
+sections.forEach(s=>navObserver.observe(s));
+
+/* reveal on scroll */
+const revealObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      en.target.classList.add('in');
+      revealObserver.unobserve(en.target);
+    }
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(elm=>revealObserver.observe(elm));
+
+/* floating particles */
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const container=document.getElementById('particles');
+  for(let i=0;i<22;i++){
+    const p=document.createElement('div');
+    p.className='particle';
+    const size=Math.random()*3+1.5;
+    p.style.width=size+'px';
+    p.style.height=size+'px';
+    p.style.left=Math.random()*100+'vw';
+    p.style.bottom='-10px';
+    p.style.animationDuration=(Math.random()*14+14)+'s';
+    p.style.animationDelay=(Math.random()*14)+'s';
+    container.appendChild(p);
+  }
+})();
+
+/* hero network */
+(function(){
+  const svgns="http://www.w3.org/2000/svg";
+  const svg=document.getElementById('hero-net');
+  const W=900,H=700;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  svg.setAttribute('preserveAspectRatio','xMaxYMid slice');
+
+  const nodes=Array.from({length:26},()=>({
+    x:Math.random()*W*0.6+W*0.35,
+    y:Math.random()*H,
+    vx:(Math.random()-0.5)*0.15,
+    vy:(Math.random()-0.5)*0.15,
+    r:Math.random()*1.6+1.2
+  }));
+
+  const linesGroup=document.createElementNS(svgns,'g');
+  const dotsGroup=document.createElementNS(svgns,'g');
+  svg.appendChild(linesGroup);
+  svg.appendChild(dotsGroup);
+
+  nodes.forEach(n=>{
+    const c=document.createElementNS(svgns,'circle');
+    c.setAttribute('r',n.r);
+    c.setAttribute('fill','#E0E1DD');
+    c.setAttribute('opacity','0.55');
+    dotsGroup.appendChild(c);
+    n.el=c;
+  });
+
+  const maxDist=150;
+  function frame(){
+    nodes.forEach(n=>{
+      n.x+=n.vx;n.y+=n.vy;
+      if(n.x<W*0.32||n.x>W)n.vx*=-1;
+      if(n.y<0||n.y>H)n.vy*=-1;
+      n.el.setAttribute('cx',n.x);
+      n.el.setAttribute('cy',n.y);
+    });
+    linesGroup.innerHTML='';
+    for(let i=0;i<nodes.length;i++){
+      for(let j=i+1;j<nodes.length;j++){
+        const dx=nodes[i].x-nodes[j].x,dy=nodes[i].y-nodes[j].y;
+        const d=Math.sqrt(dx*dx+dy*dy);
+        if(d<maxDist){
+          const line=document.createElementNS(svgns,'line');
+          line.setAttribute('x1',nodes[i].x);
+          line.setAttribute('y1',nodes[i].y);
+          line.setAttribute('x2',nodes[j].x);
+          line.setAttribute('y2',nodes[j].y);
+          line.setAttribute('stroke','#778DA9');
+          line.setAttribute('stroke-width','0.6');
+          line.setAttribute('opacity',(1-d/maxDist)*0.5);
+          linesGroup.appendChild(line);
+        }
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches) frame();
+})();
+
+/* cursor glow */
+(function(){
+  const glow=document.getElementById('cursor-glow');
+  if(!glow || window.matchMedia('(max-width:900px)').matches) return;
+  window.addEventListener('mousemove',e=>{
+    glow.style.left=e.clientX+'px';
+    glow.style.top=e.clientY+'px';
+    glow.style.opacity='.55';
+  });
+  window.addEventListener('mouseleave',()=>glow.style.opacity='0');
+})();
+</script>
+
 </body>
 </html>
-```
